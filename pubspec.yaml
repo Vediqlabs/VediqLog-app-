@@ -1,0 +1,85 @@
+name: vediqlog
+description: "VEDIQLOG Flutter Application"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI + Icons
+  cupertino_icons: ^1.0.8
+
+  # Routing
+  go_router: ^17.0.1
+
+  # Supabase Backend
+  supabase_flutter: ^2.12.0
+
+  # File Upload
+  file_picker: ^10.3.8
+  path: ^1.9.1
+
+  # Open Files / Links
+  url_launcher: ^6.3.2
+
+  # Date formatting
+  intl: ^0.20.0
+
+  # Notifications
+  flutter_local_notifications: ^17.1.2
+  timezone: ^0.9.2
+
+  # QR
+  qr_flutter: ^4.1.0
+
+  # State management
+  provider: ^6.0.5
+
+  # Charts
+  fl_chart: ^0.68.0
+  audioplayers: ^6.5.1
+
+  android_intent_plus: ^5.0.2
+
+  shared_preferences: ^2.2.3
+
+  alarm: ^5.2.1
+
+  webview_flutter: ^4.4.2
+
+  image_picker: ^1.0.7
+
+  pdf: ^3.10.7
+  printing: ^5.12.0
+
+
+  flutter_localizations:
+    sdk: flutter
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+  # App icon generator
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/icon/app_icon.png
+    - assets/logo/vediqlogo.png
+    - assets/alarm.mp3
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
