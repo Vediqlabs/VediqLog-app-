@@ -188,7 +188,96 @@
 "bloodSugar": "రక్తంలో చక్కెర",
 "bloodPressure": "రక్తపోటు",
 "hemoglobin": "హీమోగ్లోబిన్",
-"thyroid": "థైరాయిడ్ (TSH)"
+"thyroid": "థైరాయిడ్ (TSH)",
+
+"tapToEditProfile": "ప్రొఫైల్ ఎడిట్ చేయడానికి ట్యాప్ చేయండి",
+"activateMembership": "గోల్డ్ మెంబర్షిప్ ప్రారంభించండి",
+"upgradeMessage": "అప్‌గ్రేడ్ చేసి కుటుంబ ఫీచర్లను అన్‌లాక్ చేయండి",
+"accountSecurity": "ఖాతా & భద్రత",
+"legalPrivacy": "చట్టం & గోప్యత",
+"helpSupport": "సహాయం & మద్దతు",
+"dataManagement": "డేటా నిర్వహణ",
+"clearCache": "క్యాష్ క్లియర్ చేయండి",
+"activateMembership": "గోల్డ్ మెంబర్షిప్ ప్రారంభించండి",
+"upgradeMessage": "అప్‌గ్రేడ్ చేసి కుటుంబ ఫీచర్లను అన్‌లాక్ చేయండి",
+"tapToEditProfile": "ప్రొఫైల్ ఎడిట్ చేయడానికి ట్యాప్ చేయండి",
+"dataManagement": "డేటా నిర్వహణ",
+"clearCache": "క్యాష్ క్లియర్ చేయండి",
+"accountSecurity": "ఖాతా & భద్రత",
+"legalPrivacy": "చట్టం & గోప్యత",
+"helpSupport": "సహాయం & మద్దతు",
 
 
+  "editProfile": "ప్రొఫైల్ సవరించండి",
+  "selectDob": "పుట్టిన తేదీ ఎంచుకోండి",
+  "fullName": "పూర్తి పేరు",
+  "phone": "ఫోన్",
+  "heightCm": "ఎత్తు (సెం.మీ)",
+  "weightKg": "బరువు (కిలో)",
+  "diabetic": "డయాబెటిక్",
+  "emergencyInformation": "అత్యవసర సమాచారం",
+  "allergies": "అలర్జీలు",
+  "medicalConditions": "వైద్య పరిస్థితులు",
+  "medications": "ఔషధాలు",
+  "emergencyContactNumber": "అత్యవసర సంప్రదింపు నంబర్",
+  "saveProfile": "ప్రొఫైల్ సేవ్ చేయండి",
+  "male": "పురుషుడు",
+  "female": "స్త్రీ",
+  "other": "ఇతర",
+  "gender": "లింగం",
+  "bloodGroup": "రక్త గ్రూప్",
+  "logoutAllDevices": "అన్ని పరికరాల నుండి లాగ్ అవుట్ అవ్వండి",
+  "logoutEverywhere": "ఎక్కడైనా లాగ్ అవుట్",
+  "logoutAllDevicesMessage": "ఇది మీ ఖాతాను అన్ని పరికరాల నుండి లాగ్ అవుట్ చేస్తుంది.",
+  "cancel": "రద్దు చేయండి",
+  "privacyPolicy": "గోప్యతా విధానం",
+  "termsConditions": "నిబంధనలు & షరతులు",
+  "dataUsagePolicy": "డేటా వినియోగ విధానం",
+  "faqs": "ప్రశ్నలు & సమాధానాలు",
+
+  "faqUploadQuestion": "నేను రిపోర్ట్స్ ఎలా అప్లోడ్ చేయాలి?",
+  "faqUploadAnswer": "Reports ట్యాబ్‌కి వెళ్లి Upload నొక్కండి.",
+
+  "faqFamilyQuestion": "నేను కుటుంబ సభ్యులను ఎలా జోడించాలి?",
+  "faqFamilyAnswer": "Profile → Family Management → Add member.",
+
+  "faqSecurityQuestion": "నా డేటా సురక్షితమేనా?",
+  "faqSecurityAnswer": "అవును, మీ డేటా సురక్షితంగా నిల్వ చేయబడుతుంది.",
+  "contactSupport": "సపోర్ట్‌ను సంప్రదించండి",
+  "needHelp": "సహాయం కావాలా?",
+  "emailSupport": "మాకు ఈమెయిల్ చేయండి: support@vediqlog.com",
+  "responseTime": "ప్రత్యుత్తరం సమయం: 24 గంటలలో",
+    "cacheCleared": "క్యాష్ విజయవంతంగా క్లియర్ చేయబడింది",
+  "cacheDescription": "క్యాష్ క్లియర్ చేయడం తాత్కాలిక డేటాను తొలగిస్తుంది మరియు నిల్వ స్థలాన్ని ఖాళీ చేస్తుంది.",
+
+  
+  "goldMember": "గోల్డ్ సభ్యుడు",
+  "membershipId": "సభ్యత్వ ID",
+  "notActivated": "సక్రియం కాలేదు",
+  "validTill": "వరకు చెల్లుతుంది",
+  "ourServices": "మా సేవలు",
+
+  "familyVault": "ఫ్యామిలీ వాల్ట్",
+  "familyVaultDesc": "గరిష్టంగా 6 కుటుంబ సభ్యులను నిర్వహించండి",
+
+  "emergencyGps": "ఎమర్జెన్సీ GPS",
+  "emergencyGpsDesc": "అత్యవసర సమయంలో వెంటనే అలర్ట్స్",
+
+  "aiInsights": "AI ఆరోగ్య విశ్లేషణ",
+  "aiInsightsDesc": "అపరిమిత రిపోర్ట్ విశ్లేషణ",
+
+  "monthly": "నెలవారీ",
+  "yearly": "వార్షిక",
+  "save15": "15% సేవ్ చేయండి",
+
+  "membershipActive": "సభ్యత్వం యాక్టివ్",
+  "bestValue": "ఉత్తమ విలువ",
+
+  "appointments": "అప్పాయింట్మెంట్లు",
+  "medicationReminders": "మెడికేషన్ రిమైండర్లు",
+  "reportUpdates": "రిపోర్ట్ అప్డేట్స్",
+  "emergencyAlerts": "ఎమర్జెన్సీ అలర్ట్స్",
+  "offersMarketing": "ఆఫర్లు & మార్కెటింగ్"
 }
+
+

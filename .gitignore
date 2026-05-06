@@ -22,3 +22,46 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# Build folders
+build/
+out/
+target/
+
+# Flutter generated
+generated_plugin_registrant.*
+flutter_export_environment.sh
+
+# Android
+android/.gradle/
+android/local.properties
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# macOS
+macos/Flutter/ephemeral/
+
+# Linux
+linux/flutter/ephemeral/
+
+# Windows
+windows/flutter/ephemeral/
+
+# Environment
+.env
+.env.*
+
+# Coverage
+coverage/

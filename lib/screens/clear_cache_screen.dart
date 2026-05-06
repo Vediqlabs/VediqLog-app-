@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../l10n/app_localizations.dart';
 
 class ClearCacheScreen extends StatefulWidget {
   const ClearCacheScreen({super.key});
@@ -12,37 +13,43 @@ class _ClearCacheScreenState extends State<ClearCacheScreen> {
   bool clearing = false;
 
   Future<void> clearCache() async {
+    final t = AppLocalizations.of(context)!;
+
     setState(() => clearing = true);
 
     final prefs = await SharedPreferences.getInstance();
-    await prefs.clear(); // clears local stored data
+    await prefs.clear();
 
     setState(() => clearing = false);
 
     if (!mounted) return;
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Cache cleared successfully")),
+      SnackBar(content: Text(t.cacheCleared)),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Clear Cache")),
+      appBar: AppBar(title: Text(t.clearCache)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            const Text(
-              "Clearing cache removes temporary stored data and may free storage space.",
-            ),
+            Text(t.cacheDescription),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: clearing ? null : clearCache,
               child: clearing
-                  ? const CircularProgressIndicator()
-                  : const Text("Clear Cache"),
+                  ? const SizedBox(
+                      height: 18,
+                      width: 18,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : Text(t.clearCache),
             ),
           ],
         ),

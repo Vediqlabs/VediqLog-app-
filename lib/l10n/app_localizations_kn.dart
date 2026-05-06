@@ -9,13 +9,13 @@ class AppLocalizationsKn extends AppLocalizations {
   AppLocalizationsKn([String locale = 'kn']) : super(locale);
 
   @override
-  String get profileTitle => 'ನನ್ನ ಪ್ರೊಫೈಲ್';
+  String get profileTitle => 'ಪ್ರೊಫೈಲ್';
 
   @override
   String get contactInfo => 'ಸಂಪರ್ಕ ಮಾಹಿತಿ';
 
   @override
-  String get healthDetails => 'ವೈಯಕ್ತಿಕ ಆರೋಗ್ಯ ವಿವರಗಳು';
+  String get healthDetails => 'ಆರೋಗ್ಯ ವಿವರಗಳು';
 
   @override
   String get familyManagement => 'ಕುಟುಂಬ ನಿರ್ವಹಣೆ';
@@ -54,7 +54,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get managePermissions => 'ಅನುಮತಿಗಳನ್ನು ನಿರ್ವಹಿಸಿ';
 
   @override
-  String get appSettings => 'ಅಪ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು';
+  String get appSettings => 'ಆಪ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು';
 
   @override
   String get language => 'ಭಾಷೆ';
@@ -288,7 +288,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get fullName => 'ಪೂರ್ಣ ಹೆಸರು';
 
   @override
-  String get allergies => 'ಅಲರ್ಜಿ';
+  String get allergies => 'ಅಲರ್ಜಿಗಳು';
 
   @override
   String get conditions => 'ಆರೋಗ್ಯ ಸ್ಥಿತಿಗಳು';
@@ -491,4 +491,196 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get thyroid => 'Thyroid (TSH)';
+
+  @override
+  String get activateMembership => 'ಗೋಲ್ಡ್ ಸದಸ್ಯತ್ವ ಸಕ್ರಿಯಗೊಳಿಸಿ';
+
+  @override
+  String get upgradeMessage =>
+      'ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ ಕುಟುಂಬ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ';
+
+  @override
+  String get tapToEditProfile => 'ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ';
+
+  @override
+  String get accountSecurity => 'ಖಾತೆ & ಭದ್ರತೆ';
+
+  @override
+  String get legalPrivacy => 'ಕಾನೂನು & ಗೌಪ್ಯತೆ';
+
+  @override
+  String get helpSupport => 'ಸಹಾಯ & ಬೆಂಬಲ';
+
+  @override
+  String get dataManagement => 'ಡೇಟಾ ನಿರ್ವಹಣೆ';
+
+  @override
+  String get clearCache => 'ಕ್ಯಾಶ್ ತೆರವುಗೊಳಿಸಿ';
+
+  @override
+  String get editProfile => 'ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ';
+
+  @override
+  String get selectDob => 'ಜನ್ಮ ದಿನಾಂಕ ಆಯ್ಕೆಮಾಡಿ';
+
+  @override
+  String get phone => 'ಫೋನ್';
+
+  @override
+  String get heightCm => 'ಎತ್ತರ (ಸೆಂ.ಮೀ)';
+
+  @override
+  String get weightKg => 'ತೂಕ (ಕೆಜಿ)';
+
+  @override
+  String get diabetic => 'ಮಧುಮೇಹ';
+
+  @override
+  String get emergencyInformation => 'ತುರ್ತು ಮಾಹಿತಿ';
+
+  @override
+  String get medicalConditions => 'ವೈದ್ಯಕೀಯ ಸ್ಥಿತಿಗಳು';
+
+  @override
+  String get emergencyContactNumber => 'ತುರ್ತು ಸಂಪರ್ಕ ಸಂಖ್ಯೆ';
+
+  @override
+  String get saveProfile => 'ಪ್ರೊಫೈಲ್ ಉಳಿಸಿ';
+
+  @override
+  String get male => 'ಪುರುಷ';
+
+  @override
+  String get female => 'ಮಹಿಳೆ';
+
+  @override
+  String get other => 'ಇತರೆ';
+
+  @override
+  String get gender => 'ಲಿಂಗ';
+
+  @override
+  String get logoutAllDevices => 'ಎಲ್ಲಾ ಸಾಧನಗಳಿಂದ ಲಾಗ್ ಔಟ್ ಮಾಡಿ';
+
+  @override
+  String get logoutEverywhere => 'ಎಲ್ಲೆಡೆ ಲಾಗ್ ಔಟ್';
+
+  @override
+  String get logoutAllDevicesMessage =>
+      'ಇದು ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಎಲ್ಲಾ ಸಾಧನಗಳಿಂದ ಲಾಗ್ ಔಟ್ ಮಾಡುತ್ತದೆ.';
+
+  @override
+  String get cancel => 'ರದ್ದುಮಾಡಿ';
+
+  @override
+  String get privacyPolicy => 'ಗೌಪ್ಯತಾ ನೀತಿ';
+
+  @override
+  String get termsConditions => 'ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು';
+
+  @override
+  String get dataUsagePolicy => 'ಡೇಟಾ ಬಳಕೆ ನೀತಿ';
+
+  @override
+  String get faqs => 'ಸಾಮಾನ್ಯವಾಗಿ ಕೇಳುವ ಪ್ರಶ್ನೆಗಳು';
+
+  @override
+  String get faqUploadQuestion => 'ನಾನು ವರದಿಗಳನ್ನು ಹೇಗೆ ಅಪ್ಲೋಡ್ ಮಾಡುವುದು?';
+
+  @override
+  String get faqUploadAnswer => 'Reports ಟ್ಯಾಬ್‌ಗೆ ಹೋಗಿ Upload ಒತ್ತಿರಿ.';
+
+  @override
+  String get faqFamilyQuestion => 'ಕುಟುಂಬ ಸದಸ್ಯರನ್ನು ಹೇಗೆ ಸೇರಿಸಬೇಕು?';
+
+  @override
+  String get faqFamilyAnswer => 'Profile → Family Management → Add member.';
+
+  @override
+  String get faqSecurityQuestion => 'ನನ್ನ ಡೇಟಾ ಸುರಕ್ಷಿತವೇ?';
+
+  @override
+  String get faqSecurityAnswer => 'Yes, your data is securely stored.';
+
+  @override
+  String get contactSupport => 'ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ';
+
+  @override
+  String get needHelp => 'ಸಹಾಯ ಬೇಕೇ?';
+
+  @override
+  String get emailSupport => 'ನಮಗೆ ಇಮೇಲ್ ಮಾಡಿ: support@vediqlog.com';
+
+  @override
+  String get responseTime => 'ಪ್ರತಿಕ್ರಿಯೆ ಸಮಯ: 24 ಗಂಟೆಗಳ ಒಳಗೆ';
+
+  @override
+  String get cacheCleared => 'Cache cleared successfully';
+
+  @override
+  String get cacheDescription =>
+      'Clearing cache removes temporary stored data and may free storage space.';
+
+  @override
+  String get goldMember => 'ಗೋಲ್ಡ್ ಸದಸ್ಯ';
+
+  @override
+  String get membershipId => 'ಸದಸ್ಯತ್ವ ಐಡಿ';
+
+  @override
+  String get notActivated => 'ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿಲ್ಲ';
+
+  @override
+  String get validTill => 'ವರೆಗೆ ಮಾನ್ಯ';
+
+  @override
+  String get ourServices => 'ನಮ್ಮ ಸೇವೆಗಳು';
+
+  @override
+  String get familyVault => 'ಕುಟುಂಬ ವಾಲ್ಟ್';
+
+  @override
+  String get familyVaultDesc => '6 ಕುಟುಂಬ ಸದಸ್ಯರನ್ನು ನಿರ್ವಹಿಸಿ';
+
+  @override
+  String get emergencyGps => 'ತುರ್ತು GPS';
+
+  @override
+  String get emergencyGpsDesc => 'ತುರ್ತು ಸಂದರ್ಭದಲ್ಲಿ ತಕ್ಷಣದ ಅಲರ್ಟ್‌ಗಳು';
+
+  @override
+  String get aiInsights => 'AI ಆರೋಗ್ಯ ವಿಶ್ಲೇಷಣೆ';
+
+  @override
+  String get aiInsightsDesc => 'ಅಪರಿಮಿತ ವರದಿ ವಿಶ್ಲೇಷಣೆ';
+
+  @override
+  String get monthly => 'ಮಾಸಿಕ';
+
+  @override
+  String get yearly => 'ವಾರ್ಷಿಕ';
+
+  @override
+  String get save15 => '15% ಉಳಿಸಿ';
+
+  @override
+  String get membershipActive => 'ಸದಸ್ಯತ್ವ ಸಕ್ರಿಯವಾಗಿದೆ';
+
+  @override
+  String get bestValue => 'ಉತ್ತಮ ಆಯ್ಕೆ';
+
+  @override
+  String get medicationReminders => 'ಔಷಧಿ ನೆನಪಿನ ಸೂಚನೆಗಳು';
+
+  @override
+  String get appointments => 'ನೇಮಕಾತಿಗಳು';
+
+  @override
+  String get reportUpdates => 'ವರದಿ ನವೀಕರಣಗಳು';
+
+  @override
+  String get emergencyAlerts => 'ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು';
+
+  @override
+  String get offersMarketing => 'ಆಫರ್‌ಗಳು ಮತ್ತು ಮಾರ್ಕೆಟಿಂಗ್';
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../l10n/app_localizations.dart';
 
 class LegalScreen extends StatelessWidget {
   const LegalScreen({super.key});
@@ -13,22 +14,29 @@ class LegalScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Legal & Privacy")),
+      appBar: AppBar(title: Text(t.legalPrivacy)),
       body: ListView(
         children: [
           _tile(
-            "Privacy Policy",
-            () =>
-                _openUrl("https://vediq-legal.vercel.app/privacy-policy.html"),
+            t.privacyPolicy,
+            () => _openUrl(
+              "https://vediq-legal.vercel.app/privacy-policy.html",
+            ),
           ),
           _tile(
-            "Terms & Conditions",
-            () => _openUrl("https://vediq-legal.vercel.app/terms.html"),
+            t.termsConditions,
+            () => _openUrl(
+              "https://vediq-legal.vercel.app/terms.html",
+            ),
           ),
           _tile(
-            "Data Usage Policy",
-            () => _openUrl("https://vediq-legal.vercel.app/data-usage.html"),
+            t.dataUsagePolicy,
+            () => _openUrl(
+              "https://vediq-legal.vercel.app/data-usage.html",
+            ),
           ),
         ],
       ),

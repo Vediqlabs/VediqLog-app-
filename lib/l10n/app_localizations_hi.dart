@@ -9,13 +9,13 @@ class AppLocalizationsHi extends AppLocalizations {
   AppLocalizationsHi([String locale = 'hi']) : super(locale);
 
   @override
-  String get profileTitle => 'मेरी प्रोफ़ाइल';
+  String get profileTitle => 'प्रोफ़ाइल';
 
   @override
   String get contactInfo => 'संपर्क जानकारी';
 
   @override
-  String get healthDetails => 'व्यक्तिगत स्वास्थ्य विवरण';
+  String get healthDetails => 'स्वास्थ्य विवरण';
 
   @override
   String get familyManagement => 'परिवार प्रबंधन';
@@ -27,7 +27,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get mobileNumber => 'मोबाइल नंबर';
 
   @override
-  String get notSet => 'सेट नहीं';
+  String get notSet => 'सेट नहीं है';
 
   @override
   String get emailAddress => 'ईमेल पता';
@@ -60,13 +60,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get language => 'भाषा';
 
   @override
-  String get membershipPlan => 'सदस्यता योजना';
+  String get membershipPlan => 'मेंबरशिप प्लान';
 
   @override
   String get free => 'मुफ़्त';
 
   @override
-  String get notifications => 'सूचनाएँ';
+  String get notifications => 'सूचनाएं';
 
   @override
   String get darkMode => 'डार्क मोड';
@@ -296,7 +296,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get conditions => 'बीमारियाँ';
 
   @override
-  String get medications => 'दवाएँ';
+  String get medications => 'दवाएं';
 
   @override
   String get emergencyContact => 'आपातकालीन संपर्क';
@@ -493,4 +493,195 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get thyroid => 'Thyroid (TSH)';
+
+  @override
+  String get activateMembership => 'गोल्ड मेंबरशिप सक्रिय करें';
+
+  @override
+  String get upgradeMessage => 'अपग्रेड करें और परिवार फीचर्स अनलॉक करें';
+
+  @override
+  String get tapToEditProfile => 'प्रोफ़ाइल संपादित करने के लिए टैप करें';
+
+  @override
+  String get accountSecurity => 'खाता और सुरक्षा';
+
+  @override
+  String get legalPrivacy => 'कानूनी और गोपनीयता';
+
+  @override
+  String get helpSupport => 'सहायता और समर्थन';
+
+  @override
+  String get dataManagement => 'डेटा प्रबंधन';
+
+  @override
+  String get clearCache => 'कैश साफ करें';
+
+  @override
+  String get editProfile => 'प्रोफ़ाइल संपादित करें';
+
+  @override
+  String get selectDob => 'जन्म तिथि चुनें';
+
+  @override
+  String get phone => 'फोन';
+
+  @override
+  String get heightCm => 'ऊंचाई (सेमी)';
+
+  @override
+  String get weightKg => 'वजन (किलो)';
+
+  @override
+  String get diabetic => 'मधुमेह';
+
+  @override
+  String get emergencyInformation => 'आपातकालीन जानकारी';
+
+  @override
+  String get medicalConditions => 'चिकित्सीय स्थितियां';
+
+  @override
+  String get emergencyContactNumber => 'आपातकालीन संपर्क नंबर';
+
+  @override
+  String get saveProfile => 'प्रोफ़ाइल सेव करें';
+
+  @override
+  String get male => 'पुरुष';
+
+  @override
+  String get female => 'महिला';
+
+  @override
+  String get other => 'अन्य';
+
+  @override
+  String get gender => 'लिंग';
+
+  @override
+  String get logoutAllDevices => 'सभी डिवाइस से लॉगआउट करें';
+
+  @override
+  String get logoutEverywhere => 'हर जगह लॉगआउट';
+
+  @override
+  String get logoutAllDevicesMessage =>
+      'यह आपके खाते को सभी डिवाइस से लॉगआउट कर देगा।';
+
+  @override
+  String get cancel => 'रद्द करें';
+
+  @override
+  String get privacyPolicy => 'गोपनीयता नीति';
+
+  @override
+  String get termsConditions => 'नियम और शर्तें';
+
+  @override
+  String get dataUsagePolicy => 'डेटा उपयोग नीति';
+
+  @override
+  String get faqs => 'अक्सर पूछे जाने वाले प्रश्न';
+
+  @override
+  String get faqUploadQuestion => 'मैं रिपोर्ट कैसे अपलोड करूं?';
+
+  @override
+  String get faqUploadAnswer => 'Reports टैब पर जाएं और Upload दबाएं।';
+
+  @override
+  String get faqFamilyQuestion => 'मैं परिवार के सदस्यों को कैसे जोड़ूं?';
+
+  @override
+  String get faqFamilyAnswer => 'Profile → Family Management → Add member।';
+
+  @override
+  String get faqSecurityQuestion => 'क्या मेरा डेटा सुरक्षित है?';
+
+  @override
+  String get faqSecurityAnswer => 'हाँ, आपका डेटा सुरक्षित रूप से संग्रहीत है।';
+
+  @override
+  String get contactSupport => 'सपोर्ट से संपर्क करें';
+
+  @override
+  String get needHelp => 'मदद चाहिए?';
+
+  @override
+  String get emailSupport => 'हमें ईमेल करें: support@vediqlog.com';
+
+  @override
+  String get responseTime => 'प्रतिक्रिया समय: 24 घंटे के भीतर';
+
+  @override
+  String get cacheCleared => 'कैश सफलतापूर्वक साफ किया गया';
+
+  @override
+  String get cacheDescription =>
+      'कैश साफ करने से अस्थायी डेटा हट जाता है और स्टोरेज खाली हो सकता है।';
+
+  @override
+  String get goldMember => 'गोल्ड सदस्य';
+
+  @override
+  String get membershipId => 'सदस्यता आईडी';
+
+  @override
+  String get notActivated => 'सक्रिय नहीं';
+
+  @override
+  String get validTill => 'तक वैध';
+
+  @override
+  String get ourServices => 'हमारी सेवाएं';
+
+  @override
+  String get familyVault => 'फैमिली वॉल्ट';
+
+  @override
+  String get familyVaultDesc => '6 परिवार सदस्यों तक प्रबंधित करें';
+
+  @override
+  String get emergencyGps => 'इमरजेंसी GPS';
+
+  @override
+  String get emergencyGpsDesc => 'आपात स्थिति में तुरंत अलर्ट';
+
+  @override
+  String get aiInsights => 'AI स्वास्थ्य विश्लेषण';
+
+  @override
+  String get aiInsightsDesc => 'असीमित रिपोर्ट विश्लेषण';
+
+  @override
+  String get monthly => 'मासिक';
+
+  @override
+  String get yearly => 'वार्षिक';
+
+  @override
+  String get save15 => '15% बचाएं';
+
+  @override
+  String get membershipActive => 'सदस्यता सक्रिय';
+
+  @override
+  String get bestValue => 'सबसे अच्छा विकल्प';
+
+  @override
+  String get medicationReminders => 'दवा रिमाइंडर';
+
+  @override
+  String get appointments => 'अपॉइंटमेंट्स';
+
+  @override
+  String get reportUpdates => 'रिपोर्ट अपडेट्स';
+
+  @override
+  String get emergencyAlerts => 'आपातकालीन अलर्ट';
+
+  @override
+  String get offersMarketing => 'ऑफर और मार्केटिंग';
 }

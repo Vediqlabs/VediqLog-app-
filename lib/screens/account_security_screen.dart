@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:go_router/go_router.dart';
+import '../l10n/app_localizations.dart';
 
 class AccountSecurityScreen extends StatelessWidget {
   AccountSecurityScreen({super.key});
@@ -19,9 +20,11 @@ class AccountSecurityScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Account & Security"),
+        title: Text(t.accountSecurity),
       ),
       body: Padding(
         padding: const EdgeInsets.all(18),
@@ -33,26 +36,25 @@ class AccountSecurityScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: ListTile(
-                title: const Text("Logout from all devices"),
+                title: Text(t.logoutAllDevices),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
                   showDialog(
                     context: context,
                     builder: (_) => AlertDialog(
-                      title: const Text("Logout Everywhere"),
-                      content: const Text(
-                          "This will logout your account from all devices."),
+                      title: Text(t.logoutEverywhere),
+                      content: Text(t.logoutAllDevicesMessage),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),
-                          child: const Text("Cancel"),
+                          child: Text(t.cancel),
                         ),
                         TextButton(
                           onPressed: () {
                             Navigator.pop(context);
                             logoutAllDevices(context);
                           },
-                          child: const Text("Logout"),
+                          child: Text(t.logout),
                         ),
                       ],
                     ),

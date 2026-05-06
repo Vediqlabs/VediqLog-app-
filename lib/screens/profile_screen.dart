@@ -39,8 +39,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   String generateVediqId() => "VDQ-${DateTime.now().millisecondsSinceEpoch}";
 
-  /* ---------------- PROFILE ---------------- */
-
   Future<void> loadProfile() async {
     setState(() => loading = true);
 
@@ -90,8 +88,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       loading = false;
     });
   }
-
-  /* ---------------- FAMILY ---------------- */
 
   Future<void> loadFamilyMembers() async {
     final user = supabase.auth.currentUser;
@@ -177,8 +173,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
       );
 
-  /* ---------------- UI HELPERS ---------------- */
-
   Widget settingsGroup(List<Widget> children) => Container(
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.surface,
@@ -203,17 +197,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ]),
       );
 
-  /* ---------------- BUILD ---------------- */
-// Only BUILD SECTION changed. Everything else remains same.
-
   @override
   Widget build(BuildContext context) {
-    final userName = fullName;
+    final t = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.profileTitle),
-        elevation: 0,
+        title: Text(t.profileTitle),
       ),
       body: loading
           ? const Center(child: CircularProgressIndicator())
@@ -222,7 +212,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _profileCard(userName),
+                  _profileCard(fullName),
                   const SizedBox(height: 16),
 
                   /// Membership
@@ -239,18 +229,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         color: Colors.amber,
                         borderRadius: BorderRadius.circular(16),
                       ),
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "Activate Gold Membership",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 4),
-                              Text("Tap to upgrade & unlock family features"),
+                              Text(t.activateMembership,
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                              const SizedBox(height: 4),
+                              Text(t.upgradeMessage),
                             ],
                           ),
                           Icon(Icons.arrow_forward_ios, size: 16),
@@ -261,19 +250,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                   const SizedBox(height: 24),
 
-                  /// Contact Info
-                  sectionTitle("Contact Info"),
+                  sectionTitle(t.contactInfo),
                   settingsGroup([
-                    infoTile(Icons.phone, "Mobile Number",
-                        phone.isEmpty ? "Not Set" : phone),
-                    infoTile(Icons.email, "Email Address",
+                    infoTile(Icons.phone, t.mobileNumber,
+                        phone.isEmpty ? t.notSet : phone),
+                    infoTile(Icons.email, t.emailAddress,
                         supabase.auth.currentUser?.email ?? ""),
                   ]),
 
                   const SizedBox(height: 24),
 
-                  /// Health Details
-                  sectionTitle("Health Details"),
+                  sectionTitle(t.healthDetails),
                   Container(
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
@@ -281,34 +268,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Row(children: [
-                      healthBox("Blood Group", bloodGroup),
-                      healthBox("Weight", weight),
-                      healthBox("Height", height),
+                      healthBox(t.bloodGroup, bloodGroup),
+                      healthBox(t.weight, weight),
+                      healthBox(t.height, height),
                     ]),
                   ),
 
                   const SizedBox(height: 24),
 
-                  /// Family Management
-                  sectionTitle("Family Management"),
+                  sectionTitle(t.familyManagement),
                   familySection(),
 
                   const SizedBox(height: 24),
 
-                  /// Navigation Tiles
                   settingsGroup([
                     ListTile(
-                      title: const Text("Account & Security"),
+                      title: Text(t.accountSecurity),
                       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                       onTap: () => context.push("/account-security"),
                     ),
                     ListTile(
-                      title: const Text("Legal & Privacy"),
+                      title: Text(t.legalPrivacy),
                       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                       onTap: () => context.push("/legal"),
                     ),
                     ListTile(
-                      title: const Text("Help & Support"),
+                      title: Text(t.helpSupport),
                       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                       onTap: () => context.push("/support-center"),
                     ),
@@ -316,11 +301,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                   const SizedBox(height: 24),
 
-                  /// Data Management
-                  sectionTitle("Data Management"),
+                  sectionTitle(t.dataManagement),
+
                   settingsGroup([
                     ListTile(
-                      title: const Text("Clear Cache"),
+                      title: Text(t.clearCache),
                       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                       onTap: () => context.push("/clear-cache"),
                     ),
@@ -328,16 +313,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                   const SizedBox(height: 24),
 
-                  /// App Settings
-                  sectionTitle("App Settings"),
+                  sectionTitle(t.appSettings),
                   settingsGroup([
                     ListTile(
-                      title: const Text("Language"),
+                      title: Text(t.language),
                       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                       onTap: () => showLanguageSelector(context),
                     ),
                     ListTile(
-                      title: const Text("Membership Plan"),
+                      title: Text(t.membershipPlan),
                       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                       onTap: () => showModalBottomSheet(
                         context: context,
@@ -347,12 +331,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     ListTile(
-                      title: const Text("Notifications"),
+                      title: Text(t.notifications),
                       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                       onTap: () => context.push("/notifications"),
                     ),
                     ListTile(
-                      title: const Text("Dark Mode"),
+                      title: Text(t.darkMode),
                       trailing: Switch(
                         value: isDarkMode,
                         onChanged: (value) {
@@ -375,70 +359,71 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  /* ---------------- PROFILE CARD ---------------- */
+  Widget _profileCard(String userName) {
+    final t = AppLocalizations.of(context)!;
 
-  Widget _profileCard(String userName) => GestureDetector(
-        onTap: () async {
-          await context.push('/edit-profile');
-          loadProfile();
-        },
-        child: Container(
-          padding: const EdgeInsets.all(18),
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Color(0xFF0F172A), Color(0xFF1E293B)],
-            ),
-            borderRadius: BorderRadius.circular(20),
+    return GestureDetector(
+      onTap: () async {
+        await context.push('/edit-profile');
+        loadProfile();
+      },
+      child: Container(
+        padding: const EdgeInsets.all(18),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFF0F172A), Color(0xFF1E293B)],
           ),
-          child: Row(children: [
-            CircleAvatar(
-              radius: 28,
-              backgroundColor: Colors.white,
-              child:
-                  Text(userName.isNotEmpty ? userName[0].toUpperCase() : "U"),
-            ),
-            const SizedBox(width: 14),
-            Expanded(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(userName.toUpperCase(),
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                    const SizedBox(height: 4),
-                    const Text("Tap to edit profile",
-                        style: TextStyle(color: Colors.white70, fontSize: 12)),
-                    const SizedBox(height: 10),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Text(vediqId ?? ''),
-                    ),
-                  ]),
-            ),
-          ]),
+          borderRadius: BorderRadius.circular(20),
         ),
-      );
+        child: Row(children: [
+          CircleAvatar(
+            radius: 28,
+            backgroundColor: Colors.white,
+            child: Text(userName.isNotEmpty ? userName[0].toUpperCase() : "U"),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(userName.toUpperCase(),
+                  style: const TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 4),
+              Text(t.tapToEditProfile,
+                  style: const TextStyle(color: Colors.white70, fontSize: 12)),
+              const SizedBox(height: 10),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(vediqId ?? ''),
+              ),
+            ]),
+          ),
+        ]),
+      ),
+    );
+  }
 
-  /* ---------------- LOGOUT ---------------- */
+  Widget logoutButton() {
+    final t = AppLocalizations.of(context)!;
 
-  Widget logoutButton() => SizedBox(
-        width: double.infinity,
-        child: OutlinedButton.icon(
-          onPressed: () async {
-            await supabase.auth.signOut();
-            if (mounted) context.go('/login');
-          },
-          icon: const Icon(Icons.logout, color: Colors.red),
-          label: const Text("Logout", style: TextStyle(color: Colors.red)),
-        ),
-      );
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton.icon(
+        onPressed: () async {
+          await supabase.auth.signOut();
+          if (mounted) context.go('/login');
+        },
+        icon: const Icon(Icons.logout, color: Colors.red),
+        label: Text(t.logout, style: const TextStyle(color: Colors.red)),
+      ),
+    );
+  }
 
-  /* ---------------- LANGUAGE ---------------- */
   void showLanguageSelector(BuildContext context) {
     showModalBottomSheet(
       context: context,

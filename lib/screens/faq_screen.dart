@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 
 class FaqScreen extends StatelessWidget {
   const FaqScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("FAQs")),
+      appBar: AppBar(title: Text(t.faqs)),
       body: ListView(
-        children: const [
+        children: [
           _FaqItem(
-            question: "How do I upload reports?",
-            answer: "Go to Reports tab and tap Upload.",
+            question: t.faqUploadQuestion,
+            answer: t.faqUploadAnswer,
           ),
           _FaqItem(
-            question: "How do I add family members?",
-            answer: "Open Profile → Family Management → Add member.",
+            question: t.faqFamilyQuestion,
+            answer: t.faqFamilyAnswer,
           ),
           _FaqItem(
-            question: "Is my data secure?",
-            answer: "Yes, your data is securely stored.",
+            question: t.faqSecurityQuestion,
+            answer: t.faqSecurityAnswer,
           ),
         ],
       ),

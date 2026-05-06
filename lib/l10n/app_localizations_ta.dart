@@ -9,13 +9,13 @@ class AppLocalizationsTa extends AppLocalizations {
   AppLocalizationsTa([String locale = 'ta']) : super(locale);
 
   @override
-  String get profileTitle => 'என் சுயவிவரம்';
+  String get profileTitle => 'சுயவிவரம்';
 
   @override
   String get contactInfo => 'தொடர்பு தகவல்';
 
   @override
-  String get healthDetails => 'தனிப்பட்ட உடல்நலம் விவரங்கள்';
+  String get healthDetails => 'ஆரோக்கிய விவரங்கள்';
 
   @override
   String get familyManagement => 'குடும்ப மேலாண்மை';
@@ -33,7 +33,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get emailAddress => 'மின்னஞ்சல் முகவரி';
 
   @override
-  String get bloodGroup => 'இரத்த வகை';
+  String get bloodGroup => 'ரத்த வகை';
 
   @override
   String get unknown => 'தெரியாது';
@@ -54,7 +54,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get managePermissions => 'அனுமதிகளை நிர்வகிக்க';
 
   @override
-  String get appSettings => 'அப் அமைப்புகள்';
+  String get appSettings => 'ஆப் அமைப்புகள்';
 
   @override
   String get language => 'மொழி';
@@ -72,7 +72,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get darkMode => 'இருண்ட முறை';
 
   @override
-  String get add => 'சேர்';
+  String get add => 'சேர்க்கவும்';
 
   @override
   String get user => 'பயனர்';
@@ -289,7 +289,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get fullName => 'முழு பெயர்';
 
   @override
-  String get allergies => 'ஒவ்வாமை';
+  String get allergies => 'ஒவ்வாமைகள்';
 
   @override
   String get conditions => 'நோய் நிலைகள்';
@@ -493,4 +493,197 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get thyroid => 'Thyroid (TSH)';
+
+  @override
+  String get activateMembership => 'கோல்ட் உறுப்பினர் செயல்படுத்தவும்';
+
+  @override
+  String get upgradeMessage => 'மேம்படுத்து குடும்ப அம்சங்களை திறக்கவும்';
+
+  @override
+  String get tapToEditProfile => 'சுயவிவரத்தை திருத்தத் தட்டவும்';
+
+  @override
+  String get accountSecurity => 'கணக்கு & பாதுகாப்பு';
+
+  @override
+  String get legalPrivacy => 'சட்டம் & தனியுரிமை';
+
+  @override
+  String get helpSupport => 'உதவி & ஆதரவு';
+
+  @override
+  String get dataManagement => 'தரவு மேலாண்மை';
+
+  @override
+  String get clearCache => 'கேஷ் அழிக்கவும்';
+
+  @override
+  String get editProfile => 'சுயவிவரம் திருத்தவும்';
+
+  @override
+  String get selectDob => 'பிறந்த தேதியைத் தேர்ந்தெடுக்கவும்';
+
+  @override
+  String get phone => 'தொலைபேசி';
+
+  @override
+  String get heightCm => 'உயரம் (செ.மீ)';
+
+  @override
+  String get weightKg => 'எடை (கிலோ)';
+
+  @override
+  String get diabetic => 'நீரிழிவு';
+
+  @override
+  String get emergencyInformation => 'அவசர தகவல்';
+
+  @override
+  String get medicalConditions => 'மருத்துவ நிலைகள்';
+
+  @override
+  String get emergencyContactNumber => 'அவசர தொடர்பு எண்';
+
+  @override
+  String get saveProfile => 'சுயவிவரம் சேமிக்கவும்';
+
+  @override
+  String get male => 'ஆண்';
+
+  @override
+  String get female => 'பெண்';
+
+  @override
+  String get other => 'மற்றவை';
+
+  @override
+  String get gender => 'பாலினம்';
+
+  @override
+  String get logoutAllDevices => 'அனைத்து சாதனங்களிலிருந்தும் வெளியேறு';
+
+  @override
+  String get logoutEverywhere => 'எங்கும் வெளியேறு';
+
+  @override
+  String get logoutAllDevicesMessage =>
+      'இது உங்கள் கணக்கை அனைத்து சாதனங்களிலிருந்தும் வெளியேற்றும்.';
+
+  @override
+  String get cancel => 'ரத்து செய்';
+
+  @override
+  String get privacyPolicy => 'தனியுரிமை கொள்கை';
+
+  @override
+  String get termsConditions => 'விதிமுறைகள் & நிபந்தனைகள்';
+
+  @override
+  String get dataUsagePolicy => 'தரவு பயன்பாட்டு கொள்கை';
+
+  @override
+  String get faqs => 'அடிக்கடி கேட்கப்படும் கேள்விகள்';
+
+  @override
+  String get faqUploadQuestion => 'நான் அறிக்கைகளை எப்படி பதிவேற்றுவது?';
+
+  @override
+  String get faqUploadAnswer => 'Reports தாவலில் சென்று Upload அழுத்தவும்.';
+
+  @override
+  String get faqFamilyQuestion => 'குடும்ப உறுப்பினர்களை எப்படி சேர்ப்பது?';
+
+  @override
+  String get faqFamilyAnswer => 'Profile → Family Management → Add member.';
+
+  @override
+  String get faqSecurityQuestion => 'என் தரவு பாதுகாப்பானதா?';
+
+  @override
+  String get faqSecurityAnswer =>
+      'ஆம், உங்கள் தரவு பாதுகாப்பாக சேமிக்கப்படுகிறது.';
+
+  @override
+  String get contactSupport => 'ஆதரவை தொடர்புகொள்ளவும்';
+
+  @override
+  String get needHelp => 'உதவி தேவை?';
+
+  @override
+  String get emailSupport =>
+      'எங்களுக்கு மின்னஞ்சல் அனுப்பவும்: support@vediqlog.com';
+
+  @override
+  String get responseTime => 'பதில் நேரம்: 24 மணி நேரத்திற்குள்';
+
+  @override
+  String get cacheCleared => 'ಕ್ಯಾಶ್ ಯಶಸ್ವಿಯಾಗಿ ತೆರವುಗೊಳಿಸಲಾಗಿದೆ';
+
+  @override
+  String get cacheDescription =>
+      'ಕ್ಯಾಶ್ ತೆರವುಗೊಳಿಸುವುದು ತಾತ್ಕಾಲಿಕ ಡೇಟಾವನ್ನು ತೆಗೆದುಹಾಕುತ್ತದೆ ಮತ್ತು ಸಂಗ್ರಹಣಾ ಸ್ಥಳವನ್ನು ಮುಕ್ತಗೊಳಿಸುತ್ತದೆ.';
+
+  @override
+  String get goldMember => 'கோல்ட் உறுப்பினர்';
+
+  @override
+  String get membershipId => 'உறுப்பினர் ஐடி';
+
+  @override
+  String get notActivated => 'செயல்படுத்தப்படவில்லை';
+
+  @override
+  String get validTill => 'வரை செல்லுபடியாகும்';
+
+  @override
+  String get ourServices => 'எங்கள் சேவைகள்';
+
+  @override
+  String get familyVault => 'குடும்ப வால்ட்';
+
+  @override
+  String get familyVaultDesc => '6 குடும்ப உறுப்பினர்கள் வரை நிர்வகிக்கவும்';
+
+  @override
+  String get emergencyGps => 'அவசர GPS';
+
+  @override
+  String get emergencyGpsDesc => 'அவசரத்தில் உடனடி அறிவிப்புகள்';
+
+  @override
+  String get aiInsights => 'AI ஆரோக்கிய பகுப்பாய்வு';
+
+  @override
+  String get aiInsightsDesc => 'வரம்பற்ற அறிக்கை பகுப்பாய்வு';
+
+  @override
+  String get monthly => 'மாதாந்திர';
+
+  @override
+  String get yearly => 'வருடாந்திர';
+
+  @override
+  String get save15 => '15% சேமிக்கவும்';
+
+  @override
+  String get membershipActive => 'உறுப்பினர் செயல்பாட்டில் உள்ளது';
+
+  @override
+  String get bestValue => 'சிறந்த தேர்வு';
+
+  @override
+  String get medicationReminders => 'மருந்து நினைவூட்டல்கள்';
+
+  @override
+  String get appointments => 'நியமனங்கள்';
+
+  @override
+  String get reportUpdates => 'அறிக்கை புதுப்பிப்புகள்';
+
+  @override
+  String get emergencyAlerts => 'அவசர எச்சரிக்கைகள்';
+
+  @override
+  String get offersMarketing => 'சலுகைகள் & மார்க்கெட்டிங்';
 }

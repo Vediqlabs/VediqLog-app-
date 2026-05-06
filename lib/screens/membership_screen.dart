@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import '../l10n/app_localizations.dart';
 
 class MembershipSheet extends StatefulWidget {
-  final String mode; // "buy" or "manage"
+  final String mode;
 
   const MembershipSheet({
     super.key,
@@ -22,6 +23,7 @@ class _MembershipSheetState extends State<MembershipSheet> {
   bool activating = false;
   bool loading = true;
   bool isActive = false;
+
   String expiryDate = "";
   String dataMembershipId = "";
 
@@ -33,6 +35,7 @@ class _MembershipSheetState extends State<MembershipSheet> {
 
   String generateMembershipId() =>
       DateTime.now().millisecondsSinceEpoch.toString().substring(6);
+
   Future<void> loadMembership() async {
     final user = supabase.auth.currentUser;
     if (user == null) return;
@@ -85,6 +88,8 @@ class _MembershipSheetState extends State<MembershipSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return DraggableScrollableSheet(
       expand: false,
       initialChildSize: 0.85,
@@ -93,7 +98,9 @@ class _MembershipSheetState extends State<MembershipSheet> {
         return Container(
           decoration: const BoxDecoration(
             color: Color(0xFFF7F9FC),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(22)),
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(22),
+            ),
           ),
           child: ListView(
             controller: controller,
@@ -116,30 +123,39 @@ class _MembershipSheetState extends State<MembershipSheet> {
                 padding: const EdgeInsets.all(18),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFF0F172A), Color(0xFF1E293B)],
+                    colors: [
+                      Color(0xFF0F172A),
+                      Color(0xFF1E293B),
+                    ],
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("VEDIQLOG",
-                        style: TextStyle(color: Colors.white)),
-                    const SizedBox(height: 12),
                     const Text(
-                      "GOLD MEMBER",
-                      style: TextStyle(
+                      "VEDIQLOG",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      t.goldMember,
+                      style: const TextStyle(
                         color: Colors.amber,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 12),
-                    const Text("Membership ID",
-                        style: TextStyle(color: Colors.white70)),
+                    Text(
+                      t.membershipId,
+                      style: const TextStyle(
+                        color: Colors.white70,
+                      ),
+                    ),
                     const SizedBox(height: 6),
                     Text(
                       dataMembershipId.isEmpty
-                          ? "Not Activated"
+                          ? t.notActivated
                           : "•••• •••• •••• $dataMembershipId",
                       style: const TextStyle(
                         color: Colors.white,
@@ -150,8 +166,10 @@ class _MembershipSheetState extends State<MembershipSheet> {
                     if (isActive) ...[
                       const SizedBox(height: 12),
                       Text(
-                        "Valid till: $expiryDate",
-                        style: const TextStyle(color: Colors.white70),
+                        "${t.validTill}: $expiryDate",
+                        style: const TextStyle(
+                          color: Colors.white70,
+                        ),
                       ),
                     ],
                   ],
@@ -160,26 +178,39 @@ class _MembershipSheetState extends State<MembershipSheet> {
 
               const SizedBox(height: 25),
 
-              const Text("Our Services",
-                  style: TextStyle(fontWeight: FontWeight.bold)),
+              Text(
+                t.ourServices,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
 
               const SizedBox(height: 12),
 
               serviceTile(
-                  "👨‍👩‍👧 Family Vault", "Manage up to 6 family members"),
+                "👨‍👩‍👧 ${t.familyVault}",
+                t.familyVaultDesc,
+              ),
+
               serviceTile(
-                  "📍 Emergency GPS", "Instant alerts during emergencies"),
-              serviceTile("🤖 AI Health Insights", "Unlimited report analysis"),
+                "📍 ${t.emergencyGps}",
+                t.emergencyGpsDesc,
+              ),
+
+              serviceTile(
+                "🤖 ${t.aiInsights}",
+                t.aiInsightsDesc,
+              ),
 
               const SizedBox(height: 25),
 
               if (!isActive) ...[
-                /// Plans
                 Row(
                   children: [
                     Expanded(
                       child: planBox(
-                        title: "Monthly",
+                        context: context,
+                        title: t.monthly,
                         price: "₹79",
                         selected: !yearlySelected,
                         onTap: () => setState(() => yearlySelected = false),
@@ -188,19 +219,18 @@ class _MembershipSheetState extends State<MembershipSheet> {
                     const SizedBox(width: 12),
                     Expanded(
                       child: planBox(
-                        title: "Yearly",
+                        context: context,
+                        title: t.yearly,
                         price: "₹799",
                         selected: yearlySelected,
                         bestValue: true,
-                        subtitle: "Save 15%",
+                        subtitle: t.save15,
                         onTap: () => setState(() => yearlySelected = true),
                       ),
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 25),
-
                 SizedBox(
                   width: double.infinity,
                   height: 50,
@@ -213,8 +243,10 @@ class _MembershipSheetState extends State<MembershipSheet> {
                     ),
                     onPressed: activating ? null : activateMembership,
                     child: activating
-                        ? const CircularProgressIndicator(color: Colors.white)
-                        : const Text("Activate Membership"),
+                        ? const CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : Text(t.activateMembership),
                   ),
                 ),
               ] else ...[
@@ -224,7 +256,7 @@ class _MembershipSheetState extends State<MembershipSheet> {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: null,
-                    child: const Text("Membership Active"),
+                    child: Text(t.membershipActive),
                   ),
                 ),
               ],
@@ -237,7 +269,10 @@ class _MembershipSheetState extends State<MembershipSheet> {
     );
   }
 
-  static Widget serviceTile(String title, String subtitle) {
+  static Widget serviceTile(
+    String title,
+    String subtitle,
+  ) {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.all(14),
@@ -248,15 +283,24 @@ class _MembershipSheetState extends State<MembershipSheet> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text(
+            title,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           const SizedBox(height: 4),
-          Text(subtitle, style: const TextStyle(fontSize: 12)),
+          Text(
+            subtitle,
+            style: const TextStyle(fontSize: 12),
+          ),
         ],
       ),
     );
   }
 
   static Widget planBox({
+    required BuildContext context,
     required String title,
     required String price,
     required bool selected,
@@ -264,6 +308,8 @@ class _MembershipSheetState extends State<MembershipSheet> {
     bool bestValue = false,
     String? subtitle,
   }) {
+    final t = AppLocalizations.of(context)!;
+
     return GestureDetector(
       onTap: onTap,
       child: Stack(
@@ -282,13 +328,21 @@ class _MembershipSheetState extends State<MembershipSheet> {
               children: [
                 Text(title),
                 const SizedBox(height: 6),
-                Text(price,
-                    style: const TextStyle(fontWeight: FontWeight.bold)),
+                Text(
+                  price,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 if (subtitle != null) ...[
                   const SizedBox(height: 4),
-                  Text(subtitle,
-                      style:
-                          const TextStyle(color: Colors.green, fontSize: 12)),
+                  Text(
+                    subtitle,
+                    style: const TextStyle(
+                      color: Colors.green,
+                      fontSize: 12,
+                    ),
+                  ),
                 ],
               ],
             ),
@@ -298,17 +352,21 @@ class _MembershipSheetState extends State<MembershipSheet> {
               top: -6,
               right: 8,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 3,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.green,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: const Text(
-                  "BEST VALUE",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold),
+                child: Text(
+                  t.bestValue,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),

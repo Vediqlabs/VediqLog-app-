@@ -216,6 +216,20 @@ class _VediqLogAppState extends State<VediqLogApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       locale: _locale,
+      localeResolutionCallback: (deviceLocale, supportedLocales) {
+        // If user selected language → use that
+        if (_locale != null) return _locale;
+
+        // Auto detect device language
+        for (var locale in supportedLocales) {
+          if (locale.languageCode == deviceLocale?.languageCode) {
+            return locale;
+          }
+        }
+
+        // Fallback to English
+        return const Locale('en');
+      },
       title: 'VEDIQLOG',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,

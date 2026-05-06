@@ -295,7 +295,7 @@ class AppLocalizationsTe extends AppLocalizations {
   String get conditions => 'వ్యాధులు';
 
   @override
-  String get medications => 'వాడుతున్న మందులు';
+  String get medications => 'ఔషధాలు';
 
   @override
   String get emergencyContact => 'అత్యవసర సంప్రదింపు';
@@ -493,4 +493,197 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get thyroid => 'థైరాయిడ్ (TSH)';
+
+  @override
+  String get activateMembership => 'గోల్డ్ మెంబర్షిప్ ప్రారంభించండి';
+
+  @override
+  String get upgradeMessage =>
+      'అప్‌గ్రేడ్ చేసి కుటుంబ ఫీచర్లను అన్‌లాక్ చేయండి';
+
+  @override
+  String get tapToEditProfile => 'ప్రొఫైల్ ఎడిట్ చేయడానికి ట్యాప్ చేయండి';
+
+  @override
+  String get accountSecurity => 'ఖాతా & భద్రత';
+
+  @override
+  String get legalPrivacy => 'చట్టం & గోప్యత';
+
+  @override
+  String get helpSupport => 'సహాయం & మద్దతు';
+
+  @override
+  String get dataManagement => 'డేటా నిర్వహణ';
+
+  @override
+  String get clearCache => 'క్యాష్ క్లియర్ చేయండి';
+
+  @override
+  String get editProfile => 'ప్రొఫైల్ సవరించండి';
+
+  @override
+  String get selectDob => 'పుట్టిన తేదీ ఎంచుకోండి';
+
+  @override
+  String get phone => 'ఫోన్';
+
+  @override
+  String get heightCm => 'ఎత్తు (సెం.మీ)';
+
+  @override
+  String get weightKg => 'బరువు (కిలో)';
+
+  @override
+  String get diabetic => 'డయాబెటిక్';
+
+  @override
+  String get emergencyInformation => 'అత్యవసర సమాచారం';
+
+  @override
+  String get medicalConditions => 'వైద్య పరిస్థితులు';
+
+  @override
+  String get emergencyContactNumber => 'అత్యవసర సంప్రదింపు నంబర్';
+
+  @override
+  String get saveProfile => 'ప్రొఫైల్ సేవ్ చేయండి';
+
+  @override
+  String get male => 'పురుషుడు';
+
+  @override
+  String get female => 'స్త్రీ';
+
+  @override
+  String get other => 'ఇతర';
+
+  @override
+  String get gender => 'లింగం';
+
+  @override
+  String get logoutAllDevices => 'అన్ని పరికరాల నుండి లాగ్ అవుట్ అవ్వండి';
+
+  @override
+  String get logoutEverywhere => 'ఎక్కడైనా లాగ్ అవుట్';
+
+  @override
+  String get logoutAllDevicesMessage =>
+      'ఇది మీ ఖాతాను అన్ని పరికరాల నుండి లాగ్ అవుట్ చేస్తుంది.';
+
+  @override
+  String get cancel => 'రద్దు చేయండి';
+
+  @override
+  String get privacyPolicy => 'గోప్యతా విధానం';
+
+  @override
+  String get termsConditions => 'నిబంధనలు & షరతులు';
+
+  @override
+  String get dataUsagePolicy => 'డేటా వినియోగ విధానం';
+
+  @override
+  String get faqs => 'ప్రశ్నలు & సమాధానాలు';
+
+  @override
+  String get faqUploadQuestion => 'నేను రిపోర్ట్స్ ఎలా అప్లోడ్ చేయాలి?';
+
+  @override
+  String get faqUploadAnswer => 'Reports ట్యాబ్‌కి వెళ్లి Upload నొక్కండి.';
+
+  @override
+  String get faqFamilyQuestion => 'నేను కుటుంబ సభ్యులను ఎలా జోడించాలి?';
+
+  @override
+  String get faqFamilyAnswer => 'Profile → Family Management → Add member.';
+
+  @override
+  String get faqSecurityQuestion => 'నా డేటా సురక్షితమేనా?';
+
+  @override
+  String get faqSecurityAnswer =>
+      'అవును, మీ డేటా సురక్షితంగా నిల్వ చేయబడుతుంది.';
+
+  @override
+  String get contactSupport => 'సపోర్ట్‌ను సంప్రదించండి';
+
+  @override
+  String get needHelp => 'సహాయం కావాలా?';
+
+  @override
+  String get emailSupport => 'మాకు ఈమెయిల్ చేయండి: support@vediqlog.com';
+
+  @override
+  String get responseTime => 'ప్రత్యుత్తరం సమయం: 24 గంటలలో';
+
+  @override
+  String get cacheCleared => 'క్యాష్ విజయవంతంగా క్లియర్ చేయబడింది';
+
+  @override
+  String get cacheDescription =>
+      'క్యాష్ క్లియర్ చేయడం తాత్కాలిక డేటాను తొలగిస్తుంది మరియు నిల్వ స్థలాన్ని ఖాళీ చేస్తుంది.';
+
+  @override
+  String get goldMember => 'గోల్డ్ సభ్యుడు';
+
+  @override
+  String get membershipId => 'సభ్యత్వ ID';
+
+  @override
+  String get notActivated => 'సక్రియం కాలేదు';
+
+  @override
+  String get validTill => 'వరకు చెల్లుతుంది';
+
+  @override
+  String get ourServices => 'మా సేవలు';
+
+  @override
+  String get familyVault => 'ఫ్యామిలీ వాల్ట్';
+
+  @override
+  String get familyVaultDesc => 'గరిష్టంగా 6 కుటుంబ సభ్యులను నిర్వహించండి';
+
+  @override
+  String get emergencyGps => 'ఎమర్జెన్సీ GPS';
+
+  @override
+  String get emergencyGpsDesc => 'అత్యవసర సమయంలో వెంటనే అలర్ట్స్';
+
+  @override
+  String get aiInsights => 'AI ఆరోగ్య విశ్లేషణ';
+
+  @override
+  String get aiInsightsDesc => 'అపరిమిత రిపోర్ట్ విశ్లేషణ';
+
+  @override
+  String get monthly => 'నెలవారీ';
+
+  @override
+  String get yearly => 'వార్షిక';
+
+  @override
+  String get save15 => '15% సేవ్ చేయండి';
+
+  @override
+  String get membershipActive => 'సభ్యత్వం యాక్టివ్';
+
+  @override
+  String get bestValue => 'ఉత్తమ విలువ';
+
+  @override
+  String get medicationReminders => 'మెడికేషన్ రిమైండర్లు';
+
+  @override
+  String get appointments => 'అప్పాయింట్మెంట్లు';
+
+  @override
+  String get reportUpdates => 'రిపోర్ట్ అప్డేట్స్';
+
+  @override
+  String get emergencyAlerts => 'ఎమర్జెన్సీ అలర్ట్స్';
+
+  @override
+  String get offersMarketing => 'ఆఫర్లు & మార్కెటింగ్';
 }

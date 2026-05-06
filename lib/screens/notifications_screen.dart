@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import '../l10n/app_localizations.dart';
 
 class NotificationsScreen extends StatefulWidget {
   const NotificationsScreen({super.key});
@@ -53,7 +54,10 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     }
   }
 
-  Future<void> updateSetting(String key, bool value) async {
+  Future<void> updateSetting(
+    String key,
+    bool value,
+  ) async {
     final user = supabase.auth.currentUser;
     if (user == null) return;
 
@@ -63,7 +67,11 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     });
   }
 
-  Widget toggleTile(String title, bool value, Function(bool) onChanged) {
+  Widget toggleTile(
+    String title,
+    bool value,
+    Function(bool) onChanged,
+  ) {
     return SwitchListTile(
       title: Text(title),
       value: value,
@@ -73,32 +81,58 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Notifications")),
+      appBar: AppBar(
+        title: Text(t.notifications),
+      ),
       body: loading
-          ? const Center(child: CircularProgressIndicator())
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
           : ListView(
               children: [
-                toggleTile("Medication reminders", medication, (v) {
-                  setState(() => medication = v);
-                  updateSetting("medication", v);
-                }),
-                toggleTile("Appointments", appointments, (v) {
-                  setState(() => appointments = v);
-                  updateSetting("appointments", v);
-                }),
-                toggleTile("Reports updates", reports, (v) {
-                  setState(() => reports = v);
-                  updateSetting("reports", v);
-                }),
-                toggleTile("Emergency alerts", emergency, (v) {
-                  setState(() => emergency = v);
-                  updateSetting("emergency", v);
-                }),
-                toggleTile("Offers & marketing", marketing, (v) {
-                  setState(() => marketing = v);
-                  updateSetting("marketing", v);
-                }),
+                toggleTile(
+                  t.medicationReminders,
+                  medication,
+                  (v) {
+                    setState(() => medication = v);
+                    updateSetting("medication", v);
+                  },
+                ),
+                toggleTile(
+                  t.appointments,
+                  appointments,
+                  (v) {
+                    setState(() => appointments = v);
+                    updateSetting("appointments", v);
+                  },
+                ),
+                toggleTile(
+                  t.reportUpdates,
+                  reports,
+                  (v) {
+                    setState(() => reports = v);
+                    updateSetting("reports", v);
+                  },
+                ),
+                toggleTile(
+                  t.emergencyAlerts,
+                  emergency,
+                  (v) {
+                    setState(() => emergency = v);
+                    updateSetting("emergency", v);
+                  },
+                ),
+                toggleTile(
+                  t.offersMarketing,
+                  marketing,
+                  (v) {
+                    setState(() => marketing = v);
+                    updateSetting("marketing", v);
+                  },
+                ),
               ],
             ),
     );

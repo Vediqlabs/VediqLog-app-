@@ -174,5 +174,109 @@
   "policyNo": "ಪಾಲಿಸಿ ಸಂಖ್ಯೆ",
   "sumInsured": "ವಿಮೆ ಮೊತ್ತ",
   "premium": "ಪ್ರೀಮಿಯಂ",
-  "renewal": "ಪುನರ್ನವೀಕರಣ"
+  "renewal": "ಪುನರ್ನವೀಕರಣ",
+
+  "accountSecurity": "ಖಾತೆ & ಭದ್ರತೆ",
+"legalPrivacy": "ಕಾನೂನು & ಗೌಪ್ಯತೆ",
+"helpSupport": "ಸಹಾಯ & ಬೆಂಬಲ",
+"dataManagement": "ಡೇಟಾ ನಿರ್ವಹಣೆ",
+"clearCache": "ಕ್ಯಾಶ್ ತೆರವುಗೊಳಿಸಿ",
+
+  "profileTitle": "ಪ್ರೊಫೈಲ್",
+  "contactInfo": "ಸಂಪರ್ಕ ಮಾಹಿತಿ",
+  "mobileNumber": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+  "emailAddress": "ಇಮೇಲ್ ವಿಳಾಸ",
+  "notSet": "ಹೊಂದಿಸಲಾಗಿಲ್ಲ",
+  "healthDetails": "ಆರೋಗ್ಯ ವಿವರಗಳು",
+  "bloodGroup": "ರಕ್ತದ ಗುಂಪು",
+  "weight": "ತೂಕ",
+  "height": "ಎತ್ತರ",
+  "familyManagement": "ಕುಟುಂಬ ನಿರ್ವಹಣೆ",
+  "accountSecurity": "ಖಾತೆ & ಭದ್ರತೆ",
+  "legalPrivacy": "ಕಾನೂನು & ಗೌಪ್ಯತೆ",
+  "helpSupport": "ಸಹಾಯ & ಬೆಂಬಲ",
+  "dataManagement": "ಡೇಟಾ ನಿರ್ವಹಣೆ",
+  "clearCache": "ಕ್ಯಾಶ್ ತೆರವುಗೊಳಿಸಿ",
+  "appSettings": "ಆಪ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
+  "language": "ಭಾಷೆ",
+  "darkMode": "ಡಾರ್ಕ್ ಮೋಡ್",
+  "membershipPlan": "ಸದಸ್ಯತ್ವ ಯೋಜನೆ",
+  "notifications": "ಅಧಿಸೂಚನೆಗಳು",
+  "logout": "ಲಾಗ್ ಔಟ್",
+  "tapToEditProfile": "ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
+  "activateMembership": "ಗೋಲ್ಡ್ ಸದಸ್ಯತ್ವ ಸಕ್ರಿಯಗೊಳಿಸಿ",
+  "upgradeMessage": "ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ ಕುಟುಂಬ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "add": "ಸೇರಿಸಿ",
+  
+  "editProfile": "ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ",
+  "selectDob": "ಜನ್ಮ ದಿನಾಂಕ ಆಯ್ಕೆಮಾಡಿ",
+  "fullName": "ಪೂರ್ಣ ಹೆಸರು",
+  "phone": "ಫೋನ್",
+  "heightCm": "ಎತ್ತರ (ಸೆಂ.ಮೀ)",
+  "weightKg": "ತೂಕ (ಕೆಜಿ)",
+  "diabetic": "ಮಧುಮೇಹ",
+  "emergencyInformation": "ತುರ್ತು ಮಾಹಿತಿ",
+  "allergies": "ಅಲರ್ಜಿಗಳು",
+  "medicalConditions": "ವೈದ್ಯಕೀಯ ಸ್ಥಿತಿಗಳು",
+  "medications": "ಔಷಧಿಗಳು",
+  "emergencyContactNumber": "ತುರ್ತು ಸಂಪರ್ಕ ಸಂಖ್ಯೆ",
+  "saveProfile": "ಪ್ರೊಫೈಲ್ ಉಳಿಸಿ",
+  "male": "ಪುರುಷ",
+  "female": "ಮಹಿಳೆ",
+  "other": "ಇತರೆ",
+  "gender": "ಲಿಂಗ",
+  "bloodGroup": "ರಕ್ತ ಗುಂಪು",
+   "logoutAllDevices": "ಎಲ್ಲಾ ಸಾಧನಗಳಿಂದ ಲಾಗ್ ಔಟ್ ಮಾಡಿ",
+  "logoutEverywhere": "ಎಲ್ಲೆಡೆ ಲಾಗ್ ಔಟ್",
+  "logoutAllDevicesMessage": "ಇದು ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಎಲ್ಲಾ ಸಾಧನಗಳಿಂದ ಲಾಗ್ ಔಟ್ ಮಾಡುತ್ತದೆ.",
+  "cancel": "ರದ್ದುಮಾಡಿ",
+    "privacyPolicy": "ಗೌಪ್ಯತಾ ನೀತಿ",
+  "termsConditions": "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು",
+  "dataUsagePolicy": "ಡೇಟಾ ಬಳಕೆ ನೀತಿ",
+  "faqs": "ಸಾಮಾನ್ಯವಾಗಿ ಕೇಳುವ ಪ್ರಶ್ನೆಗಳು",
+
+  "faqUploadQuestion": "ನಾನು ವರದಿಗಳನ್ನು ಹೇಗೆ ಅಪ್ಲೋಡ್ ಮಾಡುವುದು?",
+  "faqUploadAnswer": "Reports ಟ್ಯಾಬ್‌ಗೆ ಹೋಗಿ Upload ಒತ್ತಿರಿ.",
+
+  "faqFamilyQuestion": "ಕುಟುಂಬ ಸದಸ್ಯರನ್ನು ಹೇಗೆ ಸೇರಿಸಬೇಕು?",
+  "faqFamilyAnswer": "Profile → Family Management → Add member.",
+
+  "faqSecurityQuestion": "ನನ್ನ ಡೇಟಾ ಸುರಕ್ಷಿತವೇ?",
+  
+  "contactSupport": "ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ",
+  "needHelp": "ಸಹಾಯ ಬೇಕೇ?",
+  "emailSupport": "ನಮಗೆ ಇಮೇಲ್ ಮಾಡಿ: support@vediqlog.com",
+  "responseTime": "ಪ್ರತಿಕ್ರಿಯೆ ಸಮಯ: 24 ಗಂಟೆಗಳ ಒಳಗೆ",
+
+
+
+  "goldMember": "ಗೋಲ್ಡ್ ಸದಸ್ಯ",
+  "membershipId": "ಸದಸ್ಯತ್ವ ಐಡಿ",
+  "notActivated": "ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿಲ್ಲ",
+  "validTill": "ವರೆಗೆ ಮಾನ್ಯ",
+  "ourServices": "ನಮ್ಮ ಸೇವೆಗಳು",
+
+  "familyVault": "ಕುಟುಂಬ ವಾಲ್ಟ್",
+  "familyVaultDesc": "6 ಕುಟುಂಬ ಸದಸ್ಯರನ್ನು ನಿರ್ವಹಿಸಿ",
+
+  "emergencyGps": "ತುರ್ತು GPS",
+  "emergencyGpsDesc": "ತುರ್ತು ಸಂದರ್ಭದಲ್ಲಿ ತಕ್ಷಣದ ಅಲರ್ಟ್‌ಗಳು",
+
+  "aiInsights": "AI ಆರೋಗ್ಯ ವಿಶ್ಲೇಷಣೆ",
+  "aiInsightsDesc": "ಅಪರಿಮಿತ ವರದಿ ವಿಶ್ಲೇಷಣೆ",
+
+  "monthly": "ಮಾಸಿಕ",
+  "yearly": "ವಾರ್ಷಿಕ",
+  "save15": "15% ಉಳಿಸಿ",
+
+  "membershipActive": "ಸದಸ್ಯತ್ವ ಸಕ್ರಿಯವಾಗಿದೆ",
+  "bestValue": "ಉತ್ತಮ ಆಯ್ಕೆ",
+
+
+  "medicationReminders": "ಔಷಧಿ ನೆನಪಿನ ಸೂಚನೆಗಳು",
+  "appointments": "ನೇಮಕಾತಿಗಳು",
+  "reportUpdates": "ವರದಿ ನವೀಕರಣಗಳು",
+  "emergencyAlerts": "ತುರ್ತು ಎಚ್ಚರಿಕೆಗಳು",
+  "offersMarketing": "ಆಫರ್‌ಗಳು ಮತ್ತು ಮಾರ್ಕೆಟಿಂಗ್"
 }
+

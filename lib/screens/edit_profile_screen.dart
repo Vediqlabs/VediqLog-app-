@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import '../l10n/app_localizations.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
@@ -23,7 +24,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   final _emergencyContact = TextEditingController();
 
   DateTime? dob;
-  String gender = "Male";
+
+  // 🔥 IMPORTANT: use keys instead of text
+  String gender = "male";
   String bloodGroup = "O+";
 
   bool loading = true;
@@ -71,7 +74,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         dob = DateTime.parse(data['dob']);
       }
 
-      gender = data['gender'] ?? "Male";
+      // 🔥 normalize stored values
+      final g = (data['gender'] ?? "male").toString().toLowerCase();
+      gender = ["male", "female", "other"].contains(g) ? g : "male";
+
       bloodGroup = data['blood_group'] ?? "O+";
       isDiabetic = data['is_diabetic'] ?? false;
     }
@@ -80,13 +86,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   }
 
   Future<void> saveProfile() async {
+    final t = AppLocalizations.of(context)!;
+
     final user = supabase.auth.currentUser;
     if (user == null) return;
 
     if (dob == null) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text("Select DOB")));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(t.selectDob)),
+      );
       return;
     }
 
@@ -128,41 +136,45 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     if (loading) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      );
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Edit Profile")),
+      appBar: AppBar(title: Text(t.editProfile)),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(18),
         child: Column(
           children: [
-            textField("Full Name", _name),
-            textField("Phone", _phone),
-            dobPicker(),
-            dropdownGender(),
-            dropdownBloodGroup(),
-            textField("Height (cm)", _height),
-            textField("Weight (kg)", _weight),
+            textField(t.fullName, _name),
+            textField(t.phone, _phone),
+            dobPicker(t),
+            dropdownGender(t),
+            dropdownBloodGroup(t),
+            textField(t.heightCm, _height),
+            textField(t.weightKg, _weight),
             SwitchListTile(
-              title: const Text("Diabetic"),
+              title: Text(t.diabetic),
               value: isDiabetic,
               onChanged: (v) => setState(() => isDiabetic = v),
             ),
             const SizedBox(height: 10),
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                "Emergency Information",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                t.emergencyInformation,
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 12),
-            textField("Allergies", _allergies),
-            textField("Medical Conditions", _conditions),
-            textField("Medications", _medications),
-            textField("Emergency Contact Number", _emergencyContact),
+            textField(t.allergies, _allergies),
+            textField(t.medicalConditions, _conditions),
+            textField(t.medications, _medications),
+            textField(t.emergencyContactNumber, _emergencyContact),
             const SizedBox(height: 24),
             SizedBox(
               width: double.infinity,
@@ -171,7 +183,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 onPressed: saving ? null : saveProfile,
                 child: saving
                     ? const CircularProgressIndicator()
-                    : const Text("Save Profile"),
+                    : Text(t.saveProfile),
               ),
             ),
           ],
@@ -180,14 +192,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     );
   }
 
-  Widget dobPicker() => Padding(
+  Widget dobPicker(AppLocalizations t) => Padding(
         padding: const EdgeInsets.only(bottom: 18),
         child: ListTile(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           tileColor: Colors.grey.shade100,
           title: Text(
-            dob == null ? "Select DOB" : DateFormat('dd MMM yyyy').format(dob!),
+            dob == null ? t.selectDob : DateFormat('dd MMM yyyy').format(dob!),
           ),
           trailing: const Icon(Icons.calendar_today),
           onTap: pickDOB,
@@ -210,21 +222,21 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         ),
       );
 
-  Widget dropdownGender() => Padding(
+  Widget dropdownGender(AppLocalizations t) => Padding(
         padding: const EdgeInsets.only(bottom: 18),
         child: DropdownButtonFormField<String>(
           value: gender,
           items: [
-            "Male",
-            "Female",
-            "Other",
-          ].map((g) => DropdownMenuItem(value: g, child: Text(g))).toList(),
+            DropdownMenuItem(value: "male", child: Text(t.male)),
+            DropdownMenuItem(value: "female", child: Text(t.female)),
+            DropdownMenuItem(value: "other", child: Text(t.other)),
+          ],
           onChanged: (v) => setState(() => gender = v!),
-          decoration: const InputDecoration(labelText: "Gender"),
+          decoration: InputDecoration(labelText: t.gender),
         ),
       );
 
-  Widget dropdownBloodGroup() => Padding(
+  Widget dropdownBloodGroup(AppLocalizations t) => Padding(
         padding: const EdgeInsets.only(bottom: 18),
         child: DropdownButtonFormField<String>(
           value: bloodGroup,
@@ -239,7 +251,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             "O-",
           ].map((g) => DropdownMenuItem(value: g, child: Text(g))).toList(),
           onChanged: (v) => setState(() => bloodGroup = v!),
-          decoration: const InputDecoration(labelText: "Blood Group"),
+          decoration: InputDecoration(labelText: t.bloodGroup),
         ),
       );
 }

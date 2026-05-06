@@ -9,13 +9,13 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get profileTitle => 'My Profile';
+  String get profileTitle => 'Profile';
 
   @override
-  String get contactInfo => 'Contact Information';
+  String get contactInfo => 'Contact Info';
 
   @override
-  String get healthDetails => 'Personal Health Details';
+  String get healthDetails => 'Health Details';
 
   @override
   String get familyManagement => 'Family Management';
@@ -491,4 +491,196 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get thyroid => 'Thyroid (TSH)';
+
+  @override
+  String get activateMembership => 'Activate Gold Membership';
+
+  @override
+  String get upgradeMessage => 'Tap to upgrade & unlock family features';
+
+  @override
+  String get tapToEditProfile => 'Tap to edit profile';
+
+  @override
+  String get accountSecurity => 'Account & Security';
+
+  @override
+  String get legalPrivacy => 'Legal & Privacy';
+
+  @override
+  String get helpSupport => 'Help & Support';
+
+  @override
+  String get dataManagement => 'Data Management';
+
+  @override
+  String get clearCache => 'Clear Cache';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get selectDob => 'Select DOB';
+
+  @override
+  String get phone => 'Phone';
+
+  @override
+  String get heightCm => 'Height (cm)';
+
+  @override
+  String get weightKg => 'Weight (kg)';
+
+  @override
+  String get diabetic => 'Diabetic';
+
+  @override
+  String get emergencyInformation => 'Emergency Information';
+
+  @override
+  String get medicalConditions => 'Medical Conditions';
+
+  @override
+  String get emergencyContactNumber => 'Emergency Contact Number';
+
+  @override
+  String get saveProfile => 'Save Profile';
+
+  @override
+  String get male => 'Male';
+
+  @override
+  String get female => 'Female';
+
+  @override
+  String get other => 'Other';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get logoutAllDevices => 'Logout from all devices';
+
+  @override
+  String get logoutEverywhere => 'Logout Everywhere';
+
+  @override
+  String get logoutAllDevicesMessage =>
+      'This will logout your account from all devices.';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get termsConditions => 'Terms & Conditions';
+
+  @override
+  String get dataUsagePolicy => 'Data Usage Policy';
+
+  @override
+  String get faqs => 'FAQs';
+
+  @override
+  String get faqUploadQuestion => 'How do I upload reports?';
+
+  @override
+  String get faqUploadAnswer => 'Go to Reports tab and tap Upload.';
+
+  @override
+  String get faqFamilyQuestion => 'How do I add family members?';
+
+  @override
+  String get faqFamilyAnswer =>
+      'Open Profile → Family Management → Add member.';
+
+  @override
+  String get faqSecurityQuestion => 'Is my data secure?';
+
+  @override
+  String get faqSecurityAnswer => 'Yes, your data is securely stored.';
+
+  @override
+  String get contactSupport => 'Contact Support';
+
+  @override
+  String get needHelp => 'Need help?';
+
+  @override
+  String get emailSupport => 'Email us at: support@vediqlog.com';
+
+  @override
+  String get responseTime => 'Response time: within 24 hours';
+
+  @override
+  String get cacheCleared => 'Cache cleared successfully';
+
+  @override
+  String get cacheDescription =>
+      'Clearing cache removes temporary stored data and may free storage space.';
+
+  @override
+  String get goldMember => 'GOLD MEMBER';
+
+  @override
+  String get membershipId => 'Membership ID';
+
+  @override
+  String get notActivated => 'Not Activated';
+
+  @override
+  String get validTill => 'Valid till';
+
+  @override
+  String get ourServices => 'Our Services';
+
+  @override
+  String get familyVault => 'Family Vault';
+
+  @override
+  String get familyVaultDesc => 'Manage up to 6 family members';
+
+  @override
+  String get emergencyGps => 'Emergency GPS';
+
+  @override
+  String get emergencyGpsDesc => 'Instant alerts during emergencies';
+
+  @override
+  String get aiInsights => 'AI Health Insights';
+
+  @override
+  String get aiInsightsDesc => 'Unlimited report analysis';
+
+  @override
+  String get monthly => 'Monthly';
+
+  @override
+  String get yearly => 'Yearly';
+
+  @override
+  String get save15 => 'Save 15%';
+
+  @override
+  String get membershipActive => 'Membership Active';
+
+  @override
+  String get bestValue => 'BEST VALUE';
+
+  @override
+  String get medicationReminders => 'Medication reminders';
+
+  @override
+  String get appointments => 'Appointments';
+
+  @override
+  String get reportUpdates => 'Reports updates';
+
+  @override
+  String get emergencyAlerts => 'Emergency alerts';
+
+  @override
+  String get offersMarketing => 'Offers & marketing';
 }

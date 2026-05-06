@@ -177,5 +177,115 @@
   "addFirstPolicy": "पहली पॉलिसी जोड़ें",
   "policyNo": "पॉलिसी नंबर",
   "premium": "प्रीमियम",
-  "renewal": "नवीनीकरण"
+  "renewal": "नवीनीकरण",
+
+  "accountSecurity": "खाता और सुरक्षा",
+"legalPrivacy": "कानूनी और गोपनीयता",
+"helpSupport": "सहायता और समर्थन",
+"dataManagement": "डेटा प्रबंधन",
+"clearCache": "कैश साफ़ करें",
+
+
+  "profileTitle": "प्रोफ़ाइल",
+  "contactInfo": "संपर्क जानकारी",
+  "mobileNumber": "मोबाइल नंबर",
+  "emailAddress": "ईमेल पता",
+  "notSet": "सेट नहीं है",
+  "healthDetails": "स्वास्थ्य विवरण",
+  "bloodGroup": "ब्लड ग्रुप",
+  "weight": "वजन",
+  "height": "ऊंचाई",
+  "familyManagement": "परिवार प्रबंधन",
+  "accountSecurity": "खाता और सुरक्षा",
+  "legalPrivacy": "कानूनी और गोपनीयता",
+  "helpSupport": "सहायता और समर्थन",
+  "dataManagement": "डेटा प्रबंधन",
+  "clearCache": "कैश साफ करें",
+  "appSettings": "ऐप सेटिंग्स",
+  "language": "भाषा",
+  "darkMode": "डार्क मोड",
+  "membershipPlan": "मेंबरशिप प्लान",
+  "notifications": "सूचनाएं",
+  "logout": "लॉगआउट",
+  "tapToEditProfile": "प्रोफ़ाइल संपादित करने के लिए टैप करें",
+  "activateMembership": "गोल्ड मेंबरशिप सक्रिय करें",
+  "upgradeMessage": "अपग्रेड करें और परिवार फीचर्स अनलॉक करें",
+  "add": "जोड़ें",
+
+  
+  "editProfile": "प्रोफ़ाइल संपादित करें",
+  "selectDob": "जन्म तिथि चुनें",
+  "fullName": "पूरा नाम",
+  "phone": "फोन",
+  "heightCm": "ऊंचाई (सेमी)",
+  "weightKg": "वजन (किलो)",
+  "diabetic": "मधुमेह",
+  "emergencyInformation": "आपातकालीन जानकारी",
+  "allergies": "एलर्जी",
+  "medicalConditions": "चिकित्सीय स्थितियां",
+  "medications": "दवाएं",
+  "emergencyContactNumber": "आपातकालीन संपर्क नंबर",
+  "saveProfile": "प्रोफ़ाइल सेव करें",
+  "male": "पुरुष",
+  "female": "महिला",
+  "other": "अन्य",
+  "gender": "लिंग",
+  "bloodGroup": "ब्लड ग्रुप",
+   "logoutAllDevices": "सभी डिवाइस से लॉगआउट करें",
+  "logoutEverywhere": "हर जगह लॉगआउट",
+  "logoutAllDevicesMessage": "यह आपके खाते को सभी डिवाइस से लॉगआउट कर देगा।",
+  "cancel": "रद्द करें",
+   "privacyPolicy": "गोपनीयता नीति",
+  "termsConditions": "नियम और शर्तें",
+  "dataUsagePolicy": "डेटा उपयोग नीति",
+
+  "faqs": "अक्सर पूछे जाने वाले प्रश्न",
+
+  "faqUploadQuestion": "मैं रिपोर्ट कैसे अपलोड करूं?",
+  "faqUploadAnswer": "Reports टैब पर जाएं और Upload दबाएं।",
+
+  "faqFamilyQuestion": "मैं परिवार के सदस्यों को कैसे जोड़ूं?",
+  "faqFamilyAnswer": "Profile → Family Management → Add member।",
+
+  "faqSecurityQuestion": "क्या मेरा डेटा सुरक्षित है?",
+  "faqSecurityAnswer": "हाँ, आपका डेटा सुरक्षित रूप से संग्रहीत है।",
+    "contactSupport": "सपोर्ट से संपर्क करें",
+    "needHelp": "मदद चाहिए?",
+  "emailSupport": "हमें ईमेल करें: support@vediqlog.com",
+  "responseTime": "प्रतिक्रिया समय: 24 घंटे के भीतर",
+  "cacheCleared": "कैश सफलतापूर्वक साफ किया गया",
+  "cacheDescription": "कैश साफ करने से अस्थायी डेटा हट जाता है और स्टोरेज खाली हो सकता है।",
+
+  
+  "goldMember": "गोल्ड सदस्य",
+  "membershipId": "सदस्यता आईडी",
+  "notActivated": "सक्रिय नहीं",
+  "validTill": "तक वैध",
+  "ourServices": "हमारी सेवाएं",
+
+  "familyVault": "फैमिली वॉल्ट",
+  "familyVaultDesc": "6 परिवार सदस्यों तक प्रबंधित करें",
+
+  "emergencyGps": "इमरजेंसी GPS",
+  "emergencyGpsDesc": "आपात स्थिति में तुरंत अलर्ट",
+
+  "aiInsights": "AI स्वास्थ्य विश्लेषण",
+  "aiInsightsDesc": "असीमित रिपोर्ट विश्लेषण",
+
+  "monthly": "मासिक",
+  "yearly": "वार्षिक",
+  "save15": "15% बचाएं",
+
+  "membershipActive": "सदस्यता सक्रिय",
+  "bestValue": "सबसे अच्छा विकल्प",
+
+
+  "medicationReminders": "दवा रिमाइंडर",
+  "appointments": "अपॉइंटमेंट्स",
+  "reportUpdates": "रिपोर्ट अपडेट्स",
+  "emergencyAlerts": "आपातकालीन अलर्ट",
+  "offersMarketing": "ऑफर और मार्केटिंग"
 }
+
+
+

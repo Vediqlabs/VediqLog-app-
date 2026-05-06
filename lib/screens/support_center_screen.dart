@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../l10n/app_localizations.dart';
 
 class SupportCenterScreen extends StatelessWidget {
   const SupportCenterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Help & Support")),
+      appBar: AppBar(title: Text(t.helpSupport)),
       body: ListView(
         children: [
-          _tile(context, "FAQs", "/faqs"),
-          _tile(context, "Contact Support", "/contact-support"),
+          _tile(context, t.faqs, "/faqs"),
+          _tile(context, t.contactSupport, "/contact-support"),
         ],
       ),
     );

@@ -107,19 +107,19 @@ abstract class AppLocalizations {
   /// No description provided for @profileTitle.
   ///
   /// In en, this message translates to:
-  /// **'My Profile'**
+  /// **'Profile'**
   String get profileTitle;
 
   /// No description provided for @contactInfo.
   ///
   /// In en, this message translates to:
-  /// **'Contact Information'**
+  /// **'Contact Info'**
   String get contactInfo;
 
   /// No description provided for @healthDetails.
   ///
   /// In en, this message translates to:
-  /// **'Personal Health Details'**
+  /// **'Health Details'**
   String get healthDetails;
 
   /// No description provided for @familyManagement.
@@ -1063,6 +1063,384 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Thyroid (TSH)'**
   String get thyroid;
+
+  /// No description provided for @activateMembership.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate Gold Membership'**
+  String get activateMembership;
+
+  /// No description provided for @upgradeMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to upgrade & unlock family features'**
+  String get upgradeMessage;
+
+  /// No description provided for @tapToEditProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to edit profile'**
+  String get tapToEditProfile;
+
+  /// No description provided for @accountSecurity.
+  ///
+  /// In en, this message translates to:
+  /// **'Account & Security'**
+  String get accountSecurity;
+
+  /// No description provided for @legalPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal & Privacy'**
+  String get legalPrivacy;
+
+  /// No description provided for @helpSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Help & Support'**
+  String get helpSupport;
+
+  /// No description provided for @dataManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Data Management'**
+  String get dataManagement;
+
+  /// No description provided for @clearCache.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Cache'**
+  String get clearCache;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// No description provided for @selectDob.
+  ///
+  /// In en, this message translates to:
+  /// **'Select DOB'**
+  String get selectDob;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get phone;
+
+  /// No description provided for @heightCm.
+  ///
+  /// In en, this message translates to:
+  /// **'Height (cm)'**
+  String get heightCm;
+
+  /// No description provided for @weightKg.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight (kg)'**
+  String get weightKg;
+
+  /// No description provided for @diabetic.
+  ///
+  /// In en, this message translates to:
+  /// **'Diabetic'**
+  String get diabetic;
+
+  /// No description provided for @emergencyInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Information'**
+  String get emergencyInformation;
+
+  /// No description provided for @medicalConditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Medical Conditions'**
+  String get medicalConditions;
+
+  /// No description provided for @emergencyContactNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Contact Number'**
+  String get emergencyContactNumber;
+
+  /// No description provided for @saveProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Profile'**
+  String get saveProfile;
+
+  /// No description provided for @male.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get male;
+
+  /// No description provided for @female.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get female;
+
+  /// No description provided for @other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get other;
+
+  /// No description provided for @gender.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get gender;
+
+  /// No description provided for @logoutAllDevices.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout from all devices'**
+  String get logoutAllDevices;
+
+  /// No description provided for @logoutEverywhere.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout Everywhere'**
+  String get logoutEverywhere;
+
+  /// No description provided for @logoutAllDevicesMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This will logout your account from all devices.'**
+  String get logoutAllDevicesMessage;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @termsConditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms & Conditions'**
+  String get termsConditions;
+
+  /// No description provided for @dataUsagePolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Data Usage Policy'**
+  String get dataUsagePolicy;
+
+  /// No description provided for @faqs.
+  ///
+  /// In en, this message translates to:
+  /// **'FAQs'**
+  String get faqs;
+
+  /// No description provided for @faqUploadQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I upload reports?'**
+  String get faqUploadQuestion;
+
+  /// No description provided for @faqUploadAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Reports tab and tap Upload.'**
+  String get faqUploadAnswer;
+
+  /// No description provided for @faqFamilyQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I add family members?'**
+  String get faqFamilyQuestion;
+
+  /// No description provided for @faqFamilyAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Profile → Family Management → Add member.'**
+  String get faqFamilyAnswer;
+
+  /// No description provided for @faqSecurityQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Is my data secure?'**
+  String get faqSecurityQuestion;
+
+  /// No description provided for @faqSecurityAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, your data is securely stored.'**
+  String get faqSecurityAnswer;
+
+  /// No description provided for @contactSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Support'**
+  String get contactSupport;
+
+  /// No description provided for @needHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Need help?'**
+  String get needHelp;
+
+  /// No description provided for @emailSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Email us at: support@vediqlog.com'**
+  String get emailSupport;
+
+  /// No description provided for @responseTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Response time: within 24 hours'**
+  String get responseTime;
+
+  /// No description provided for @cacheCleared.
+  ///
+  /// In en, this message translates to:
+  /// **'Cache cleared successfully'**
+  String get cacheCleared;
+
+  /// No description provided for @cacheDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Clearing cache removes temporary stored data and may free storage space.'**
+  String get cacheDescription;
+
+  /// No description provided for @goldMember.
+  ///
+  /// In en, this message translates to:
+  /// **'GOLD MEMBER'**
+  String get goldMember;
+
+  /// No description provided for @membershipId.
+  ///
+  /// In en, this message translates to:
+  /// **'Membership ID'**
+  String get membershipId;
+
+  /// No description provided for @notActivated.
+  ///
+  /// In en, this message translates to:
+  /// **'Not Activated'**
+  String get notActivated;
+
+  /// No description provided for @validTill.
+  ///
+  /// In en, this message translates to:
+  /// **'Valid till'**
+  String get validTill;
+
+  /// No description provided for @ourServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Services'**
+  String get ourServices;
+
+  /// No description provided for @familyVault.
+  ///
+  /// In en, this message translates to:
+  /// **'Family Vault'**
+  String get familyVault;
+
+  /// No description provided for @familyVaultDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage up to 6 family members'**
+  String get familyVaultDesc;
+
+  /// No description provided for @emergencyGps.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency GPS'**
+  String get emergencyGps;
+
+  /// No description provided for @emergencyGpsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant alerts during emergencies'**
+  String get emergencyGpsDesc;
+
+  /// No description provided for @aiInsights.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Health Insights'**
+  String get aiInsights;
+
+  /// No description provided for @aiInsightsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited report analysis'**
+  String get aiInsightsDesc;
+
+  /// No description provided for @monthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get monthly;
+
+  /// No description provided for @yearly.
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly'**
+  String get yearly;
+
+  /// No description provided for @save15.
+  ///
+  /// In en, this message translates to:
+  /// **'Save 15%'**
+  String get save15;
+
+  /// No description provided for @membershipActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Membership Active'**
+  String get membershipActive;
+
+  /// No description provided for @bestValue.
+  ///
+  /// In en, this message translates to:
+  /// **'BEST VALUE'**
+  String get bestValue;
+
+  /// No description provided for @medicationReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'Medication reminders'**
+  String get medicationReminders;
+
+  /// No description provided for @appointments.
+  ///
+  /// In en, this message translates to:
+  /// **'Appointments'**
+  String get appointments;
+
+  /// No description provided for @reportUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports updates'**
+  String get reportUpdates;
+
+  /// No description provided for @emergencyAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency alerts'**
+  String get emergencyAlerts;
+
+  /// No description provided for @offersMarketing.
+  ///
+  /// In en, this message translates to:
+  /// **'Offers & marketing'**
+  String get offersMarketing;
 }
 
 class _AppLocalizationsDelegate

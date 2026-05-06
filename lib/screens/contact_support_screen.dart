@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 
 class ContactSupportScreen extends StatelessWidget {
   const ContactSupportScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Contact Support")),
-      body: const Padding(
-        padding: EdgeInsets.all(16),
+      appBar: AppBar(title: Text(t.contactSupport)),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Need help?",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              t.needHelp,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
-            SizedBox(height: 10),
-            Text("Email us at: support@vediqlog.com"),
-            SizedBox(height: 10),
-            Text("Response time: within 24 hours"),
+            const SizedBox(height: 10),
+            Text(t.emailSupport),
+            const SizedBox(height: 10),
+            Text(t.responseTime),
           ],
         ),
       ),
