@@ -18,7 +18,8 @@ class ChatScreen extends StatefulWidget {
   State<ChatScreen> createState() => _ChatScreenState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class _ChatScreenState extends State<ChatScreen> with WidgetsBindingObserver {
+  // ← lifecycle observer
   final TextEditingController controller = TextEditingController();
   final ScrollController scrollController = ScrollController();
   final MessageService messageService = MessageService();
@@ -26,27 +27,42 @@ class _ChatScreenState extends State<ChatScreen> {
   List<Map<String, dynamic>> messages = [];
   RealtimeChannel? channel;
   bool isSending = false;
+  bool _realtimeReady = false;
 
   @override
   void initState() {
     super.initState();
-    loadMessages();
-    subscribeRealtime();
+    WidgetsBinding.instance.addObserver(this); // ← register
+    _subscribeRealtime();
+    _loadMessages();
   }
 
-  Future<void> loadMessages() async {
+  // ← reconnect when app comes back to foreground
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      if (channel != null) {
+        Supabase.instance.client.removeChannel(channel!);
+      }
+      _realtimeReady = false;
+      _subscribeRealtime();
+      _loadMessages();
+    }
+  }
+
+  Future<void> _loadMessages() async {
     try {
       final res = await Supabase.instance.client
           .from('messages')
           .select()
           .eq('session_id', widget.sessionId)
-          .order('created_at', ascending: false);
-      if (!mounted) return;
+          .order('created_at', ascending: true);
 
+      if (!mounted) return;
       setState(() {
         messages = List<Map<String, dynamic>>.from(res);
+        _realtimeReady = true;
       });
-
       _scrollToBottom();
     } catch (e) {
       if (!mounted) return;
@@ -56,48 +72,34 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  void subscribeRealtime() {
-    channel = Supabase.instance.client.channel(
-      'messages-${widget.sessionId}',
-    );
-
-    channel!
+  void _subscribeRealtime() {
+    channel = Supabase.instance.client
+        .channel('vediqlog-${widget.sessionId}')
         .onPostgresChanges(
-      event: PostgresChangeEvent.insert,
-      schema: 'public',
-      table: 'messages',
-      // ❌ REMOVE FILTER COMPLETELY
-      callback: (payload) {
-        print("REALTIME HIT: ${payload.newRecord}");
+          event: PostgresChangeEvent.insert,
+          schema: 'public',
+          table: 'messages',
+          callback: (payload) {
+            if (!_realtimeReady) return;
+            final newMsg = Map<String, dynamic>.from(payload.newRecord);
+            if (newMsg['session_id'] != widget.sessionId) return;
+            if (!mounted) return;
 
-        final newMessage = Map<String, dynamic>.from(payload.newRecord);
+            final exists = messages.any((m) => m['id'] == newMsg['id']);
+            if (exists) return;
 
-        /// ✅ MANUAL FILTER (SAFE)
-        if (newMessage['session_id'] != widget.sessionId) return;
-
-        if (!mounted) return;
-
-        setState(() {
-          messages.insert(0, newMessage);
-        });
-      },
-    )
-        .subscribe((status, [error]) {
-      print("SUB STATUS: $status");
-      if (error != null) {
-        print("SUB ERROR: $error");
-      }
-    });
+            setState(() => messages.add(newMsg));
+            _scrollToBottom();
+          },
+        )
+        .subscribe();
   }
 
   Future<void> sendMessage() async {
     final text = controller.text.trim();
     if (text.isEmpty || isSending) return;
 
-    setState(() {
-      isSending = true;
-    });
-
+    setState(() => isSending = true);
     controller.clear();
 
     try {
@@ -113,17 +115,16 @@ class _ChatScreenState extends State<ChatScreen> {
       );
     } finally {
       if (!mounted) return;
-      setState(() {
-        isSending = false;
-      });
+      setState(() => isSending = false);
     }
   }
 
   void _scrollToBottom() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!scrollController.hasClients) return;
+      if (scrollController.position.maxScrollExtent <= 0) return;
       scrollController.animateTo(
-        0,
+        scrollController.position.maxScrollExtent,
         duration: const Duration(milliseconds: 250),
         curve: Curves.easeOut,
       );
@@ -132,6 +133,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this); // ← unregister
     if (channel != null) {
       Supabase.instance.client.removeChannel(channel!);
     }
@@ -145,36 +147,85 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7FB),
       appBar: AppBar(
-        title: Text(widget.doctor['name'] ?? 'Doctor'),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        elevation: 1,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.doctor['name'] ?? 'Doctor',
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              widget.issue,
+              style: const TextStyle(fontSize: 11, color: Colors.grey),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
       ),
       body: Column(
         children: [
           Expanded(
             child: messages.isEmpty
-                ? const Center(
-                    child: Text("Start your consultation..."),
+                ? Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.chat_bubble_outline,
+                            size: 48, color: Colors.grey.shade300),
+                        const SizedBox(height: 12),
+                        const Text(
+                          "Start your consultation",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
                   )
                 : ListView.builder(
                     controller: scrollController,
-                    reverse: true,
+                    reverse: false,
                     padding: const EdgeInsets.all(12),
                     itemCount: messages.length,
                     itemBuilder: (context, index) {
                       final msg = messages[index];
                       final text = msg['message']?.toString() ?? '';
+                      final isMe = msg['sender_type'] == 'user';
 
                       return Align(
-                        alignment: Alignment.centerRight,
+                        alignment:
+                            isMe ? Alignment.centerRight : Alignment.centerLeft,
                         child: Container(
                           margin: const EdgeInsets.only(bottom: 10),
-                          padding: const EdgeInsets.all(12),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 14, vertical: 10),
+                          constraints: BoxConstraints(
+                            maxWidth: MediaQuery.of(context).size.width * 0.72,
+                          ),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF0F172A),
-                            borderRadius: BorderRadius.circular(12),
+                            color:
+                                isMe ? const Color(0xFF0F172A) : Colors.white,
+                            borderRadius: BorderRadius.only(
+                              topLeft: const Radius.circular(16),
+                              topRight: const Radius.circular(16),
+                              bottomLeft: Radius.circular(isMe ? 16 : 4),
+                              bottomRight: Radius.circular(isMe ? 4 : 16),
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.04),
+                                blurRadius: 4,
+                                offset: const Offset(0, 2),
+                              )
+                            ],
                           ),
                           child: Text(
                             text,
-                            style: const TextStyle(color: Colors.white),
+                            style: TextStyle(
+                              color: isMe ? Colors.white : Colors.black87,
+                              height: 1.4,
+                            ),
                           ),
                         ),
                       );

@@ -15,7 +15,7 @@ class SessionService {
           'user_id': user!.id,
           'doctor_id': doctorId,
           'issue': issue,
-          'status': 'active'
+          'status': 'pending'
         })
         .select()
         .single();

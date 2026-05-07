@@ -25,17 +25,15 @@ class _PaymentScreenState extends State<PaymentScreen> {
     final service = SessionService();
 
     try {
-      /// 🔥 Create session
       final sessionId = await service.createSession(
         doctorId: widget.doctor['id'].toString(),
         issue: widget.issue,
       );
 
-      /// Debug
-      print("Session created: $sessionId");
+      if (!mounted) return; // ← crash fix
 
-      /// Navigate
-      Navigator.push(
+      /// pushReplacement so back from chat doesn't return here
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => ChatScreen(
@@ -46,11 +44,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
         ),
       );
     } catch (e) {
+      if (!mounted) return; // ← crash fix
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Error creating session: $e")),
       );
     } finally {
-      setState(() => isLoading = false);
+      if (mounted) setState(() => isLoading = false); // ← crash fix
     }
   }
 
@@ -72,7 +71,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  /// 🔥 DOCTOR CARD
+                  /// Doctor card
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
@@ -93,9 +92,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           backgroundColor: Colors.blue.shade100,
                           child: Text(
                             doctor['name'][0],
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         const SizedBox(width: 14),
@@ -111,7 +108,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                 ),
                               ),
                               const SizedBox(height: 4),
-                              Text(doctor['specialization']),
+                              Text(doctor['specialization'] ?? ''),
                               const SizedBox(height: 6),
                               Row(
                                 children: [
@@ -143,7 +140,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
                   const SizedBox(height: 20),
 
-                  /// 📝 ISSUE
+                  /// Issue
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(14),
@@ -159,7 +156,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
                   const SizedBox(height: 20),
 
-                  /// 💰 BREAKDOWN
+                  /// Price breakdown
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
@@ -179,7 +176,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
                   const SizedBox(height: 20),
 
-                  /// 🔒 TRUST
                   const Row(
                     children: [
                       Icon(Icons.lock, size: 16, color: Colors.grey),
@@ -195,7 +191,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
           ),
 
-          /// 🔥 BUTTON
+          /// CTA button
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 10, 16, 16),

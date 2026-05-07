@@ -11,14 +11,24 @@ class StartConsultationScreen extends StatefulWidget {
 
 class _StartConsultationScreenState extends State<StartConsultationScreen> {
   final TextEditingController issueController = TextEditingController();
+  final FocusNode _focusNode = FocusNode(); // ← for custom chip
+  String? selectedIssue;
 
   final List<String> quickIssues = [
     "Fever",
     "Headache",
     "Skin Issue",
     "Cold & Cough",
-    "Stomach Pain"
+    "Stomach Pain",
+    "custom"
   ];
+
+  @override
+  void dispose() {
+    issueController.dispose();
+    _focusNode.dispose(); // ← cleanup
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,43 +44,77 @@ class _StartConsultationScreenState extends State<StartConsultationScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// 🔥 SMART TITLE
             const Text(
-              "Tell us what's bothering you 👇",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              "Tell us what's bothering you",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-
             const SizedBox(height: 8),
-
             const Text(
               "You can type, select, or upload reports",
               style: TextStyle(color: Colors.grey),
             ),
-
             const SizedBox(height: 20),
 
-            /// 🔥 QUICK ISSUE CHIPS
+            /// QUICK ISSUE CHIPS
             Wrap(
               spacing: 10,
               runSpacing: 10,
               children: quickIssues.map((issue) {
+                final isCustom = issue == 'custom';
+                final isSelected = selectedIssue == issue;
+
                 return GestureDetector(
                   onTap: () {
-                    issueController.text = issue;
-                    setState(() {});
+                    if (isCustom) {
+                      setState(() {
+                        selectedIssue = 'custom';
+                        issueController.clear();
+                      });
+                      Future.delayed(const Duration(milliseconds: 100), () {
+                        _focusNode.requestFocus(); // ← focus text field
+                      });
+                    } else {
+                      setState(() {
+                        selectedIssue = issue;
+                        issueController.text = issue;
+                      });
+                    }
                   },
-                  child: Container(
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 200),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 14, vertical: 10),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color:
+                          isSelected ? const Color(0xFF0F172A) : Colors.white,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.grey.shade300),
+                      border: Border.all(
+                        color: isSelected
+                            ? const Color(0xFF0F172A)
+                            : Colors.grey.shade300,
+                      ),
                     ),
-                    child: Text(issue),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (isCustom)
+                          Icon(
+                            Icons.edit,
+                            size: 13,
+                            color: isSelected ? Colors.white : Colors.grey,
+                          ),
+                        if (isCustom) const SizedBox(width: 4),
+                        Text(
+                          isCustom ? 'Custom' : issue,
+                          style: TextStyle(
+                            color: isSelected ? Colors.white : Colors.black,
+                            fontWeight: isSelected
+                                ? FontWeight.w600
+                                : FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               }).toList(),
@@ -78,18 +122,34 @@ class _StartConsultationScreenState extends State<StartConsultationScreen> {
 
             const SizedBox(height: 20),
 
-            /// 🔥 INPUT BOX (UPGRADED)
+            /// INPUT BOX
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
+                border: Border.all(
+                  color: selectedIssue == 'custom'
+                      ? const Color(0xFF0F172A)
+                      : Colors.transparent,
+                  width: 1.5,
+                ), // ← highlight when custom selected
               ),
               child: TextField(
                 controller: issueController,
+                focusNode: _focusNode, // ← attach focus node
                 maxLines: 4,
-                decoration: const InputDecoration(
-                  hintText: "Describe your issue in detail...",
+                onChanged: (_) {
+                  if (selectedIssue != null &&
+                      selectedIssue != 'custom' &&
+                      issueController.text != selectedIssue) {
+                    setState(() => selectedIssue = null);
+                  }
+                },
+                decoration: InputDecoration(
+                  hintText: selectedIssue == 'custom'
+                      ? "Describe your issue in detail..." // ← custom hint
+                      : "Or describe your issue here...",
                   border: InputBorder.none,
                 ),
               ),
@@ -97,7 +157,6 @@ class _StartConsultationScreenState extends State<StartConsultationScreen> {
 
             const SizedBox(height: 15),
 
-            /// 🔥 ATTACH REPORT (UI ONLY)
             Row(
               children: [
                 Icon(Icons.attach_file, color: Colors.grey.shade600),
@@ -109,7 +168,6 @@ class _StartConsultationScreenState extends State<StartConsultationScreen> {
 
             const SizedBox(height: 25),
 
-            /// 🔥 CTA BUTTON
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -122,15 +180,13 @@ class _StartConsultationScreenState extends State<StartConsultationScreen> {
                 ),
                 onPressed: () {
                   final issue = issueController.text.trim();
-
-                  if (issue.isEmpty) {
+                  if (issue.isEmpty || issue == 'custom') {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                           content: Text("Please describe your issue")),
                     );
                     return;
                   }
-
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -138,10 +194,8 @@ class _StartConsultationScreenState extends State<StartConsultationScreen> {
                     ),
                   );
                 },
-                child: const Text(
-                  "Continue",
-                  style: TextStyle(fontSize: 16),
-                ),
+                child: const Text("Continue",
+                    style: TextStyle(fontSize: 16, color: Colors.white)),
               ),
             ),
           ],
